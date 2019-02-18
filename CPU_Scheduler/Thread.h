@@ -26,7 +26,7 @@ public:
 
 	}
 
-	void addBurstTime(size_t currTime) {//TODO: recalculates wait time everytime it gets schedualed. potential problem if never gets schedualed. Will we still need wait time in such a case? 
+	void addWaitTime(size_t currTime) {//TODO: recalculates wait time everytime it gets schedualed. potential problem if never gets schedualed. Will we still need wait time in such a case? 
 		waitingTime += currTime - lastReadyTime;
 		lastReadyTime = currTime;
 	}

@@ -1,4 +1,6 @@
 #pragma once
+#include <memory>
+
 #include "Thread.h"
 
 class CPU
@@ -10,15 +12,14 @@ public:
 	bool run();//run this every clock tick
 	bool getStatus();
 	size_t getLengthOfCurrentBurst();
-	Thread* setWorkingThread(Thread* newThread);
-	Thread* getWorkingThread();
+	std::shared_ptr<Thread> setWorkingThread(std::shared_ptr<Thread> newThread);
+	std::shared_ptr<Thread> getWorkingThread();
 
 private:
-	Thread* currThread;
-	size_t burstTimeLeft;
+	std::shared_ptr<Thread> currThread = NULL;
+	size_t burstTimeLeft = 0;
 
-	size_t currTime;
-	size_t currBurstStart;
-
+	size_t currTime = 0;
+	size_t currBurstStart = 0;
 };
 

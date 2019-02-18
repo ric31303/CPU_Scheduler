@@ -116,6 +116,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CPU.h" />
+    <ClInclude Include="Thread.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CPU.cpp" />

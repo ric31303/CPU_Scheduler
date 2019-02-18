@@ -13,11 +13,11 @@ public:
 
 	void run();
 
-	void addNewThread(std::shared_ptr<Thread>);
-	void readyThread(std::shared_ptr<Thread>);//move a specific thread from Blocked List to Ready List
-	void blockThread(std::shared_ptr<Thread>);//move a specific thread from Ready List to Blocked List
-	std::shared_ptr<Thread> preempt(std::shared_ptr<Thread>);//preempt the current thread on the CPU
-	void finishThread(std::shared_ptr<Thread>);//move a specific thread from Ready List to Finished List
+	void addNewThread(std::shared_ptr<Thread> thread);
+	void readyThread(std::shared_ptr<Thread> thread);//move a specific thread from Blocked List to Ready List
+	void blockThread(std::shared_ptr<Thread> thread);//move a specific thread from Ready List to Blocked List
+	std::shared_ptr<Thread> preempt(std::shared_ptr<Thread> thread);//preempt the current thread on the CPU
+	void finishThread(std::shared_ptr<Thread> thread);//move a specific thread from Ready List to Finished List
 
 private:
 	std::shared_ptr<CPU> cpu;

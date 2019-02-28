@@ -27,6 +27,9 @@
     <ClInclude Include="ScheduleStrategy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Context.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CPU.cpp">
@@ -36,6 +39,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Scheduler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FIFO_Strategy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

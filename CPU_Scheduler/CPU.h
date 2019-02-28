@@ -15,6 +15,8 @@ public:
 	std::shared_ptr<Thread> setWorkingThread(std::shared_ptr<Thread> newThread);
 	std::shared_ptr<Thread> getWorkingThread();
 
+	size_t getClockTime() { return currTime; }
+
 private:
 	std::shared_ptr<Thread> currThread = NULL;
 	size_t burstTimeLeft = 0;

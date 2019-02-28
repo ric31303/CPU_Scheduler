@@ -27,6 +27,7 @@ void Scheduler::run() {
 
 void Scheduler::addNewThread(std::shared_ptr<Thread> thread) {
 	ReadyList.push_back(thread);
+	strat->addThread(); //TODO: should the strategy be allowed to push the added thread?
 }
 
 void Scheduler::readyThread(std::shared_ptr<Thread> thread) { //move a specific thread from Blocked List to Ready List

@@ -94,6 +94,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <ShowIncludes>true</ShowIncludes>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -115,6 +116,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Context.h" />
     <ClInclude Include="CPU.h" />
     <ClInclude Include="Scheduler.h" />
     <ClInclude Include="ScheduleStrategy.h" />
@@ -122,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CPU.cpp" />
+    <ClCompile Include="FIFO_Strategy.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Scheduler.cpp" />
   </ItemGroup>

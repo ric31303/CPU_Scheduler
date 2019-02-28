@@ -1,8 +1,12 @@
 #pragma once
+
 #include <List>
+#include <memory>
 
 #include "CPU.h"
-#include "ScheduleStrategy.h"
+
+#include "ScheduleStrategy.h" //predefines Context
+#include "Context.h"          //predefines Scheduler
 
 class Scheduler
 {

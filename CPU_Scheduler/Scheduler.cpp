@@ -26,18 +26,18 @@ void Scheduler::run() {
 }
 
 void Scheduler::addNewThread(std::shared_ptr<Thread> thread) {
-	ReadyList.push_back(thread);
+	readyList->push_back(thread);
 	strat->addThread(); //TODO: should the strategy be allowed to push the added thread?
 }
 
 void Scheduler::readyThread(std::shared_ptr<Thread> thread) { //move a specific thread from Blocked List to Ready List
-	BlockedList.remove(thread);//TODO: try this first
-	ReadyList.push_back(thread);
+	blockedList->remove(thread);//TODO: try this first
+	readyList->push_back(thread);
 }
 
 void Scheduler::blockThread(std::shared_ptr<Thread> thread) { //move a specific thread from Ready List to Blocked List
-	ReadyList.remove(thread);//TODO: try this first
-	BlockedList.push_back(thread);
+	readyList->remove(thread);//TODO: try this first
+	blockedList->push_back(thread);
 }
 
 std::shared_ptr<Thread> Scheduler::preempt(std::shared_ptr<Thread> thread) { //preempt the current thread on the CPU
@@ -45,6 +45,22 @@ std::shared_ptr<Thread> Scheduler::preempt(std::shared_ptr<Thread> thread) { //p
 }
 
 void Scheduler::finishThread(std::shared_ptr<Thread> thread) { //move a specific thread from Ready List to Finished List
-	ReadyList.remove(thread);//TODO: try this first
-	FinishedList.push_back(thread);
+	readyList->remove(thread);//TODO: try this first
+	finishedList->push_back(thread);
+}
+
+bool Scheduler::isFinished(){
+	return readyList->size() == 0 && blockedList->size() == 0;
+}
+
+size_t Scheduler::numFinished(){
+	return finishedList->size();
+}
+
+std::shared_ptr<Context> Scheduler::getContext() {
+	if (context == NULL) {
+		context = std::make_shared<Context>(finishedList, readyList, blockedList, this);
+	}
+
+	return context;
 }

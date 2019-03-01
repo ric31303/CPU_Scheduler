@@ -118,6 +118,7 @@
   <ItemGroup>
     <ClInclude Include="Context.h" />
     <ClInclude Include="CPU.h" />
+    <ClInclude Include="FIFO_Strategy.h" />
     <ClInclude Include="Scheduler.h" />
     <ClInclude Include="ScheduleStrategy.h" />
     <ClInclude Include="Thread.h" />

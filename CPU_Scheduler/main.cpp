@@ -1,27 +1,23 @@
 #include <iostream>
-#include "CPU.h"
-
+#include "Scheduler.h"
+#include "FIFO_Strategy.h"
 
 int main(int argc, char *argv[]){
-	CPU* cpu = new CPU();
-	std::vector<std::shared_ptr<Thread>> threads;
+	std::shared_ptr<CPU> c = std::make_shared<CPU>();
+	std::shared_ptr<ScheduleStrategy> strat;
+	std::shared_ptr<Scheduler> s = std::make_shared<Scheduler>(c, strat);
+	strat = std::make_shared<FIFO_Strategy>(s->getContext());
 
 	for (int i = 0; i < 10; i++) {
 		std::shared_ptr<Thread> newThread(new Thread());
-		threads.push_back(newThread);
+		//s.addNewThread(newThread);
 	}
 
-	cpu->setWorkingThread(threads.back());
-	threads.pop_back();
-	while(threads.size() > 0){
-		while (cpu->run()) {
+	//while (!s.isFinished()) {
+	//	s.run();
 
-		}
-
-		cpu->setWorkingThread(threads.back());
-		threads.pop_back();
-		std::cout << "new thread\n";
-	}
+	//	std::cout << s.numFinished() << "\n";
+	//}
 
 	system("pause");
 }

@@ -23,11 +23,17 @@ public:
 	std::shared_ptr<Thread> preempt(std::shared_ptr<Thread> thread);//preempt the current thread on the CPU
 	void finishThread(std::shared_ptr<Thread> thread);//move a specific thread from Ready List to Finished List
 
+	bool isFinished();
+	size_t numFinished();
+	std::shared_ptr<Context> getContext();
+
 private:
 	std::shared_ptr<CPU> cpu;
-	std::list<std::shared_ptr<Thread>> FinishedList;
-	std::list<std::shared_ptr<Thread>> ReadyList;
-	std::list<std::shared_ptr<Thread>> BlockedList;
+	std::shared_ptr<std::list<std::shared_ptr<Thread>>> finishedList;
+	std::shared_ptr<std::list<std::shared_ptr<Thread>>> readyList;
+	std::shared_ptr<std::list<std::shared_ptr<Thread>>> blockedList;
+
+	std::shared_ptr<Context> context;
 
 	std::shared_ptr<ScheduleStrategy> strat;
 };

@@ -59,7 +59,7 @@ size_t Scheduler::numFinished(){
 
 std::shared_ptr<Context> Scheduler::getContext() {
 	if (context == NULL) {
-		context = std::make_shared<Context>(finishedList, readyList, blockedList, this);
+		context = std::make_shared<Context>(finishedList, readyList, blockedList, shared_from_this());
 	}
 
 	return context;

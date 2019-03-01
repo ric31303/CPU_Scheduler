@@ -8,7 +8,7 @@
 #include "ScheduleStrategy.h" //predefines Context
 #include "Context.h"          //predefines Scheduler
 
-class Scheduler
+class Scheduler : public std::enable_shared_from_this<Scheduler>
 {
 public:
 	Scheduler();

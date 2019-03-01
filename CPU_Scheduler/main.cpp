@@ -10,14 +10,18 @@ int main(int argc, char *argv[]){
 
 	for (int i = 0; i < 10; i++) {
 		std::shared_ptr<Thread> newThread(new Thread());
-		//s.addNewThread(newThread);
+		s->addNewThread(newThread);
 	}
 
-	//while (!s.isFinished()) {
-	//	s.run();
+	while (!s->isFinished()) {
+		s->run();
 
-	//	std::cout << s.numFinished() << "\n";
-	//}
+	std::cout << s->numFinished() << "\n";
+	}
 
-	system("pause");
+	int x;
+
+	std::cin >> x;
+
+	//system("pause");
 }

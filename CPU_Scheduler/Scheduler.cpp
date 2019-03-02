@@ -8,8 +8,7 @@ Scheduler::Scheduler(){//TODO: do this once we have strategies
 Scheduler::Scheduler(std::shared_ptr<CPU> c, std::shared_ptr<ScheduleStrategy> s){
 	cpu = c;
 	strat = s;
-    std::list<std::shared_ptr<Thread>> list; // empty list
-    readyList =  std::make_shared<std::list<std::shared_ptr<Thread>>>(list);
+    readyList =  std::make_shared<std::list<std::shared_ptr<Thread>>>();
 }
 
 

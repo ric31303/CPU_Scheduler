@@ -1,13 +1,15 @@
 #include "Scheduler.h"
 
 
-Scheduler::Scheduler(){//TODO: do this once we have strategies 
-	
+Scheduler::Scheduler(){//TODO: do this once we have strategies
+   
 }
 
 Scheduler::Scheduler(std::shared_ptr<CPU> c, std::shared_ptr<ScheduleStrategy> s){
 	cpu = c;
 	strat = s;
+    std::list<std::shared_ptr<Thread>> list; // empty list
+    readyList =  std::make_shared<std::list<std::shared_ptr<Thread>>>(list);
 }
 
 
@@ -26,8 +28,9 @@ void Scheduler::run() {
 }
 
 void Scheduler::addNewThread(std::shared_ptr<Thread> thread) {
-	readyList->push_back(thread);
-	strat->addThread(); //TODO: should the strategy be allowed to push the added thread?
+    
+    readyList->push_back(thread);
+    strat->addThread(); //TODO: should the strategy be allowed to push the added thread?
 }
 
 void Scheduler::readyThread(std::shared_ptr<Thread> thread) { //move a specific thread from Blocked List to Ready List

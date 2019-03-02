@@ -1,6 +1,6 @@
 #pragma once
 
-#include <List>
+#include <list>
 #include <memory>
 
 #include "CPU.h"
@@ -30,7 +30,7 @@ public:
 private:
 	std::shared_ptr<CPU> cpu;
 	std::shared_ptr<std::list<std::shared_ptr<Thread>>> finishedList;
-	std::shared_ptr<std::list<std::shared_ptr<Thread>>> readyList;
+    std::shared_ptr<std::list<std::shared_ptr<Thread>>> readyList;
 	std::shared_ptr<std::list<std::shared_ptr<Thread>>> blockedList;
 
 	std::shared_ptr<Context> context;

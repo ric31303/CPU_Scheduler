@@ -6,18 +6,24 @@ class Thread
 public:
 	size_t waitingTime;
 	size_t lastReadyTime;
+    size_t prevBurstTime;
+    size_t priority;
 	bool needsIO; //TODO: impliment IO
 
 	Thread() {
 		waitingTime = 0;
 		lastReadyTime = 0;
+        prevBurstTime = 0;
+        priority = 0;
 		burstTime.push_back(1); //one time unit of burst
 		needsIO = false;
 	}
 
-	Thread(size_t entryTime, std::vector<size_t> burstT ) {
+	Thread(size_t entryTime, std::vector<size_t> burstT, size_t prior ) {
 		waitingTime = 0;
 		lastReadyTime = entryTime;
+        prevBurstTime = 0;
+        priority = prior;
 		burstTime = burstT;
 		needsIO = false;
 	}

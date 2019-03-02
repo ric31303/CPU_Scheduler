@@ -3,13 +3,15 @@
 #include <fstream>
 #include "Scheduler.h"
 #include "FIFO_Strategy.h"
+#include "SJF_Strategy.h"
+#include "Priority_Strategy.h"
 
 
 int main(int argc, char *argv[]){
 	std::shared_ptr<CPU> c = std::make_shared<CPU>();
 	std::shared_ptr<ScheduleStrategy> strat;
 	std::shared_ptr<Scheduler> s = std::make_shared<Scheduler>(c, strat);
-    strat = std::make_shared<FIFO_Strategy>(s->getContext());
+    strat = std::make_shared<SJF_Strategy>(s->getContext());
     s->updateStrat(strat);
 
     // test
@@ -18,7 +20,7 @@ int main(int argc, char *argv[]){
     for (int i = 0; i < 10; i++) {
 //        std::shared_ptr<Thread> newThread(new Thread());
         printf("%d\n",i);
-        std::shared_ptr<Thread> newThread(new Thread(i,burstTimes));
+        std::shared_ptr<Thread> newThread(new Thread(i,burstTimes,i));
         s->addNewThread(newThread);
     }
     

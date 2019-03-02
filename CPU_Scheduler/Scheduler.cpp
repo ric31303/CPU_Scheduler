@@ -26,6 +26,10 @@ void Scheduler::run() {
 	strat->run();
 }
 
+void Scheduler::updateStrat(std::shared_ptr<ScheduleStrategy> _strat) {
+    strat = _strat;
+}
+
 void Scheduler::addNewThread(std::shared_ptr<Thread> thread) {
     
     readyList->push_back(thread);

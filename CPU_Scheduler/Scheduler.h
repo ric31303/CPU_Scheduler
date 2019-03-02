@@ -22,6 +22,7 @@ public:
 	void blockThread(std::shared_ptr<Thread> thread);//move a specific thread from Ready List to Blocked List
 	std::shared_ptr<Thread> preempt(std::shared_ptr<Thread> thread);//preempt the current thread on the CPU
 	void finishThread(std::shared_ptr<Thread> thread);//move a specific thread from Ready List to Finished List
+    void updateStrat(std::shared_ptr<ScheduleStrategy> _strat);//move a specific thread from Ready List to Finished List
 
 	bool isFinished();
 	size_t numFinished();

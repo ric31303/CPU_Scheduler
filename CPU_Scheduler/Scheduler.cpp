@@ -8,8 +8,7 @@ Scheduler::Scheduler(){//TODO: do this once we have strategies
 Scheduler::Scheduler(std::shared_ptr<CPU> c, std::shared_ptr<ScheduleStrategy> s){
 	cpu = c;
 	strat = s;
-    std::list<std::shared_ptr<Thread>> list; // empty list
-    readyList =  std::make_shared<std::list<std::shared_ptr<Thread>>>(list);
+    readyList =  std::make_shared<std::list<std::shared_ptr<Thread>>>();
 }
 
 
@@ -25,6 +24,10 @@ void Scheduler::run() {
 
 	//otherwise run the strategy to see if we preempt
 	strat->run();
+}
+
+void Scheduler::updateStrat(std::shared_ptr<ScheduleStrategy> _strat) {
+    strat = _strat;
 }
 
 void Scheduler::addNewThread(std::shared_ptr<Thread> thread) {

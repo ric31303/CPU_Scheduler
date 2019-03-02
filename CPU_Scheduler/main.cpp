@@ -9,7 +9,8 @@ int main(int argc, char *argv[]){
 	std::shared_ptr<CPU> c = std::make_shared<CPU>();
 	std::shared_ptr<ScheduleStrategy> strat;
 	std::shared_ptr<Scheduler> s = std::make_shared<Scheduler>(c, strat);
-	strat = std::make_shared<FIFO_Strategy>(s->getContext());
+    strat = std::make_shared<FIFO_Strategy>(s->getContext());
+    s->updateStrat(strat);
 
     // test
     std::vector<size_t> burstTimes = {3,4,5};

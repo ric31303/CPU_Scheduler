@@ -5,22 +5,22 @@ SRTF_Strategy::SRTF_Strategy(std::shared_ptr<Context> c) : ScheduleStrategy(c) {
 }
 
 void SRTF_Strategy::run() {
-    std::shared_ptr<Thread> threadToSchedule;
-    for (std::list<std::shared_ptr<Thread>>::iterator it = context->ReadyList->begin(); it != context->ReadyList->end(); ++it){
-        if (compareBurstTime(*it, threadToSchedule)){
-            threadToSchedule = *it;
+    std::shared_ptr<Thread> threadToSchedule = std::make_shared<Thread>();
+    for (auto& it: *context->ReadyList){
+        if (compareBurstTime(it, threadToSchedule)){
+            threadToSchedule = it;
         }
     }
-    if (compareBurstTime(threadToSchedule, <#std::shared_ptr<Thread> threadB#>))
+    if (compareBurstTime(threadToSchedule, context->scheduler->getCurrThread()))
         context->ReadyList->remove(threadToSchedule);
         context->scheduler->preempt(threadToSchedule); //move scheduled thread to CPU and save the last thread
 }
 
 void SRTF_Strategy::schedule() {
-    std::shared_ptr<Thread> threadToSchedule;
-    for (std::list<std::shared_ptr<Thread>>::iterator it = context->ReadyList->begin(); it != context->ReadyList->end(); ++it){
-        if (compareBurstTime(*it, threadToSchedule)){
-            threadToSchedule = *it;
+    std::shared_ptr<Thread> threadToSchedule = std::make_shared<Thread>();
+    for (auto& it: *context->ReadyList){
+        if (compareBurstTime(it, threadToSchedule)){
+            threadToSchedule = it;
         }
     }
     context->ReadyList->remove(threadToSchedule);

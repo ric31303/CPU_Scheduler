@@ -9,7 +9,7 @@ void SJF_Strategy::run() {
 }
 
 void SJF_Strategy::schedule() {
-    std::shared_ptr<Thread> threadToSchedule;
+    std::shared_ptr<Thread> threadToSchedule = std::make_shared<Thread>();
     for (std::list<std::shared_ptr<Thread>>::iterator it = context->ReadyList->begin(); it != context->ReadyList->end(); ++it){
         if (compareBurstTime(*it, threadToSchedule)){
             threadToSchedule = *it;

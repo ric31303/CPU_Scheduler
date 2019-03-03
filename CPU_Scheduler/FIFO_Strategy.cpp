@@ -12,7 +12,7 @@ void FIFO_Strategy::schedule() {
 	std::shared_ptr<Thread> threadToSchedule = context->ReadyList->front();
 	context->ReadyList->pop_front();
 	std::shared_ptr<Thread> lastThread = context->scheduler->preempt(threadToSchedule); //move scheduled thread to CPU and save the last thread
-    if ( lastThread->isFinished()){
+    if (lastThread != NULL && lastThread->isFinished()){
         context->scheduler->finishThread(lastThread);
     } else {
         context->scheduler->readyThread(lastThread);

@@ -2,7 +2,7 @@ import sys
 import random
 
 maxBurstTime = 10
-maxBurstNum = 10
+maxBurstNum = 1
 threadNum = 100
 arriveTimeRange = 5
 priorityRange = 10
@@ -34,6 +34,6 @@ if __name__ == "__main__":
 			fo.write(",")
 			fo.write(str(burstTime))
 		fo.write("\n")
-		arriveTime += random.randint(1, arriveTimeRange)
+		arriveTime += random.randint(0, arriveTimeRange)
 
 	fo.close()

@@ -1,7 +1,6 @@
 #include "CPU.h"
 
 CPU::CPU(){
-
 }
 
 
@@ -10,8 +9,10 @@ CPU::~CPU()
 }
 
 bool CPU::run() {//run this every clock tick
-	currTime++; //TODO: change this to use a real time datatype at some point
-	burstTimeLeft--;
+	currTime++; //TODO: change this to use a real time datatype at some point／
+    if (burstTimeLeft != 0) {
+        burstTimeLeft--;
+    }
 
 	return getStatus();
 }
@@ -30,6 +31,7 @@ size_t CPU::getLengthOfCurrentBurst(){
 }
 
 std::shared_ptr<Thread> CPU::setWorkingThread(std::shared_ptr<Thread> newThread) {
+    printf("[cpu] setWorkingThread\n");
 	if (currThread == NULL) {//if this is the first thread
 		currThread = newThread;
 		newThread->addWaitTime(currTime);

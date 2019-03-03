@@ -9,7 +9,4 @@ public:
     void schedule();
     void addThread();
     
-private:
-    bool comparePriority(std::shared_ptr<Thread> threadA, std::shared_ptr<Thread> threadB);
-    
 };

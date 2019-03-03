@@ -10,9 +10,9 @@ void Priority_Strategy::run() {
 
 void Priority_Strategy::schedule() {
     std::shared_ptr<Thread> threadToSchedule = std::make_shared<Thread>();
-    for (std::list<std::shared_ptr<Thread>>::iterator it = context->ReadyList->begin(); it != context->ReadyList->end(); ++it){
-        if (comparePriority(*it, threadToSchedule)){
-            threadToSchedule = *it;
+    for (auto& it: *context->ReadyList){
+        if (it->priority < threadToSchedule->priority){
+            threadToSchedule = it;
         }
     }
     context->ReadyList->remove(threadToSchedule);
@@ -22,8 +22,4 @@ void Priority_Strategy::schedule() {
 
 void Priority_Strategy::addThread() {
     //nothing needed here for SJF
-}
-
-bool Priority_Strategy::comparePriority(std::shared_ptr<Thread> threadA, std::shared_ptr<Thread> threadB){
-    return threadA->priority < threadB->priority;
 }

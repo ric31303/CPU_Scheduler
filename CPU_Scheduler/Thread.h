@@ -17,7 +17,7 @@ public:
         waitingTime = 0;
         lastReadyTime = 0;
         prevBurstTime = SIZE_T_MAX;
-        priority = 0;
+        priority = SIZE_T_MAX;
         burstTime.push_back(1); //one time unit of burst
         needsIO = false;
         finish = false;

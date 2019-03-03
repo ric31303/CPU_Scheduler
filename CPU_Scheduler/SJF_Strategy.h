@@ -9,7 +9,5 @@ public:
     void schedule();
     void addThread();
 
-private:
-    bool compareBurstTime(std::shared_ptr<Thread> threadA, std::shared_ptr<Thread> threadB);
-    
+
 };

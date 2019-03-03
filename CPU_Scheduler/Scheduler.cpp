@@ -46,7 +46,13 @@ void Scheduler::blockThread(std::shared_ptr<Thread> thread) { //move a specific 
 }
 
 std::shared_ptr<Thread> Scheduler::preempt(std::shared_ptr<Thread> thread) { //preempt the current thread on the CPU
-	return cpu->setWorkingThread(thread);
+	std::shared_ptr<Thread> lastThread = cpu->setWorkingThread(thread);
+    if ( lastThread->isFinished()){
+       finishThread(lastThread);
+    } else {
+        readyList->push_back(lastThread); // if not finished then push in to readyList
+    }
+    return lastThread;
 }
 
 void Scheduler::finishThread(std::shared_ptr<Thread> thread) { //move a specific thread from CPU to Finished List

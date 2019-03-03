@@ -2,18 +2,22 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <thread>
 
 #include "Scheduler.h"
 #include "FIFO_Strategy.h"
 #include "SJF_Strategy.h"
 #include "Priority_Strategy.h"
 #include "SRTF_Strategy.h"
+#include "PreemptPriority_Strategy.h"
+#include "RR_Strategy.h"
+
 
 int main(int argc, char *argv[]){
     std::shared_ptr<CPU> c = std::make_shared<CPU>();
     std::shared_ptr<ScheduleStrategy> strat;
     std::shared_ptr<Scheduler> s = std::make_shared<Scheduler>(c, strat);
-    strat = std::make_shared<SRTF_Strategy>(s->getContext());
+    strat = std::make_shared<SJF_Strategy>(s->getContext());
     s->updateStrat(strat);
     
     // parameters
@@ -84,6 +88,7 @@ int main(int argc, char *argv[]){
         
         s->run();
         std::cout <<"   number of finished threads:"<< s->numFinished() << "\n";
+        std::this_thread::sleep_for(std::chrono::nanoseconds(10000)); // sleep for 10ms
     }
 
 //    int x;

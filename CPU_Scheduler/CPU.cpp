@@ -33,37 +33,28 @@ size_t CPU::getLengthOfCurrentBurst(){
 
 std::shared_ptr<Thread> CPU::setWorkingThread(std::shared_ptr<Thread> newThread) {
     printf("[cpu] setWorkingThread\n");
-    if (currThread == NULL) {//if this is the first thread
-        currThread = newThread;
-        newThread->addWaitTime(currTime);
-        burstTimeLeft = currThread->burstTime.back();
-        currBurstStart = currTime;
-        return NULL;
-    }
-
-    if (getStatus()) {//TODO: this will become more important if/when we actually use a proper time datatype
-        currThread->burstTime.back() = burstTimeLeft;
-    } else {
-        currThread->burstTime.pop_back();
-        if (currThread->burstTime.size() <= 1){ // if no more bursttime then finished
-            currThread->finish = true;
-        }
-    }
     
     std::shared_ptr<Thread> oldThread = currThread;
-    oldThread->prevBurstTime = getLengthOfCurrentBurst(); //record current burst
-    currThread = newThread;
-    
+    if (oldThread != NULL) {//if this is the first thread
+        if (getStatus()) {//TODO: this will become more important if/when we actually use a proper time datatype
+            oldThread->burstTime.back() = burstTimeLeft;
+        } else {
+            oldThread->burstTime.pop_back();
+            if (oldThread->burstTime.size() <= 1){ // if no more bursttime then finished
+                oldThread->finish = true;
+            }
+        }
+    }
     if (newThread == NULL) {//Stop executing
         burstTimeLeft = 0;
-        return oldThread;
+    }else{
+        currThread = newThread;
+        currThread->addWaitTime(currTime);
+        burstTimeLeft = currThread->burstTime.back();
+        currBurstStart = currTime;
     }
-    
-    newThread->addWaitTime(currTime);
-    burstTimeLeft = currThread->burstTime.back();
-    currBurstStart = currTime;
-
     return oldThread;
+    
 }
 
 std::shared_ptr<Thread> CPU::getWorkingThread() {

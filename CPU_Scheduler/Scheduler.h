@@ -28,6 +28,7 @@ public:
 	size_t numFinished();
 	std::shared_ptr<Context> getContext();
     std::shared_ptr<Thread> getCurrThread();
+    size_t getCurrBurst();
     
 private:
 	std::shared_ptr<CPU> cpu;

@@ -22,7 +22,7 @@ Scheduler::~Scheduler(){
 
 void Scheduler::run() {
     printf("\n[Scheduler]cpu time: %zu\n",cpu->getClockTime());
-	if (!cpu->run() && readyList->size() != 0) { //run cpu; if thread has completed:
+	if (!cpu->run()) { //run cpu; if thread has completed:
         
 		strat->schedule();
 		return;
@@ -88,4 +88,8 @@ std::shared_ptr<Context> Scheduler::getContext() {
 
 std::shared_ptr<Thread> Scheduler::getCurrThread(){
     return cpu->getWorkingThread();
+}
+
+size_t Scheduler::getCurrBurst(){
+    return cpu->getLengthOfCurrentBurst();
 }

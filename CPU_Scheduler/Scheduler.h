@@ -19,15 +19,16 @@ public:
 
 	void addNewThread(std::shared_ptr<Thread> thread);
 	void readyThread(std::shared_ptr<Thread> thread);//move a specific thread from Blocked List to Ready List
-	void blockThread(std::shared_ptr<Thread> thread);//move a specific thread from Ready List to Blocked List
+	void blockThread(std::shared_ptr<Thread> thread);//move a specific thread from CPU to Blocked List
 	std::shared_ptr<Thread> preempt(std::shared_ptr<Thread> thread);//preempt the current thread on the CPU
-	void finishThread(std::shared_ptr<Thread> thread);//move a specific thread from Ready List to Finished List
+	void finishThread(std::shared_ptr<Thread> thread);//move a specific thread from CPU to Finished List
     void updateStrat(std::shared_ptr<ScheduleStrategy> _strat);//move a specific thread from Ready List to Finished List
 
 	bool isFinished();
 	size_t numFinished();
 	std::shared_ptr<Context> getContext();
-
+    std::shared_ptr<Thread> Scheduler::getWorkingThread();
+    
 private:
 	std::shared_ptr<CPU> cpu;
 	std::shared_ptr<std::list<std::shared_ptr<Thread>>> finishedList;

@@ -41,8 +41,7 @@ void Scheduler::readyThread(std::shared_ptr<Thread> thread) { //move a specific 
 	readyList->push_back(thread);
 }
 
-void Scheduler::blockThread(std::shared_ptr<Thread> thread) { //move a specific thread from Ready List to Blocked List
-	readyList->remove(thread);//TODO: try this first
+void Scheduler::blockThread(std::shared_ptr<Thread> thread) { //move a specific thread from CPU to Blocked List
 	blockedList->push_back(thread);
 }
 
@@ -50,8 +49,7 @@ std::shared_ptr<Thread> Scheduler::preempt(std::shared_ptr<Thread> thread) { //p
 	return cpu->setWorkingThread(thread);
 }
 
-void Scheduler::finishThread(std::shared_ptr<Thread> thread) { //move a specific thread from Ready List to Finished List
-	readyList->remove(thread);//TODO: try this first
+void Scheduler::finishThread(std::shared_ptr<Thread> thread) { //move a specific thread from CPU to Finished List
 	finishedList->push_back(thread);
 }
 

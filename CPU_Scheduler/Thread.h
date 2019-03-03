@@ -9,7 +9,8 @@ public:
     size_t prevBurstTime;
     size_t priority;
 	bool needsIO; //TODO: impliment IO
-
+    bool finish;
+    
 	Thread() {
 		waitingTime = 0;
 		lastReadyTime = 0;
@@ -17,6 +18,7 @@ public:
         priority = 0;
 		burstTime.push_back(1); //one time unit of burst
 		needsIO = false;
+        finish = false;
 	}
 
 	Thread(size_t entryTime, std::vector<size_t> burstT, size_t prior ) {
@@ -26,6 +28,7 @@ public:
         priority = prior;
 		burstTime = burstT;
 		needsIO = false;
+        finish = false;
 	}
 
 	~Thread() {
@@ -40,5 +43,9 @@ public:
 	//this is public so that CPU can see it but absolutly nothing else should ever look at it
 	//back = top of burstTime stack
 	std::vector<size_t> burstTime;//TODO: This should be a bit more complicated including the burst/io
+    
+    bool isFinished(){
+        return finish;
+    }
 };
 

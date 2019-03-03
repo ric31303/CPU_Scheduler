@@ -18,10 +18,11 @@ bool CPU::run() {//run this every clock tick
 
 bool CPU::getStatus() {
 	if (burstTimeLeft <= 0) {//TODO: this will become more important if/when we actually use a proper time datatype
+        
 		return false;
 	}
 	else {
-		return true;
+		return true; // true means not complete
 	}
 }
 
@@ -38,23 +39,24 @@ std::shared_ptr<Thread> CPU::setWorkingThread(std::shared_ptr<Thread> newThread)
 		return NULL;
 	}
 
-	if (newThread == NULL) {//Stop executing
-		std::shared_ptr<Thread> oldThread = currThread;
-        oldThread->prevBurstTime = getLengthOfCurrentBurst(); //record current burst
-		currThread = NULL;
-		burstTimeLeft = 0;
-		return oldThread;
+	if (getStatus()) {//TODO: this will become more important if/when we actually use a proper time datatype
+		currThread->burstTime.back() = burstTimeLeft;
+	} else {
+        currThread->burstTime.pop_back();
+        if (currThread->burstTime.size() <= 1){ // if no more bursttime then finished
+            currThread->finish = true;
+        }
 	}
     
-	if (burstTimeLeft <= 0) {//TODO: this will become more important if/when we actually use a proper time datatype
-		currThread->burstTime.pop_back();
-	} else {
-		currThread->burstTime.at(currThread->burstTime.max_size() - 1) = burstTimeLeft;
-	}
-	
-	std::shared_ptr<Thread> oldThread = currThread;
+    std::shared_ptr<Thread> oldThread = currThread;
     oldThread->prevBurstTime = getLengthOfCurrentBurst(); //record current burst
-	currThread = newThread;
+    currThread = newThread;
+    
+    if (newThread == NULL) {//Stop executing
+        burstTimeLeft = 0;
+        return oldThread;
+    }
+	
 	newThread->addWaitTime(currTime);
 	burstTimeLeft = currThread->burstTime.back();
 	currBurstStart = currTime;

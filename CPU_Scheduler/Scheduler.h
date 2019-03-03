@@ -27,7 +27,7 @@ public:
 	bool isFinished();
 	size_t numFinished();
 	std::shared_ptr<Context> getContext();
-    std::shared_ptr<Thread> Scheduler::getWorkingThread();
+    std::shared_ptr<Thread> getCurrThread();
     
 private:
 	std::shared_ptr<CPU> cpu;

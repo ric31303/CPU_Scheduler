@@ -17,6 +17,7 @@ void FIFO_Strategy::schedule() {
     } else {
         context->scheduler->readyThread(lastThread);
     }
+	
 }
 
 void FIFO_Strategy::addThread() {

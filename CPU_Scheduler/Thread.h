@@ -8,10 +8,12 @@ public:
 	size_t lastReadyTime;
     size_t prevBurstTime;
     size_t priority;
+    int id;
 	bool needsIO; //TODO: impliment IO
     bool finish;
     
 	Thread() {
+        id = 0;
 		waitingTime = 0;
 		lastReadyTime = 0;
         prevBurstTime = 0;
@@ -21,7 +23,8 @@ public:
         finish = false;
 	}
 
-	Thread(size_t entryTime, std::vector<size_t> burstT, size_t prior ) {
+	Thread(int _id, size_t entryTime, std::vector<size_t> burstT, size_t prior ) {
+        id = _id;
 		waitingTime = 0;
 		lastReadyTime = entryTime;
         prevBurstTime = 0;

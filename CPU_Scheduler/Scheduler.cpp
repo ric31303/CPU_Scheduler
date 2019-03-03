@@ -2,13 +2,17 @@
 
 
 Scheduler::Scheduler(){//TODO: do this once we have strategies
-   
+    readyList =  std::make_shared<std::list<std::shared_ptr<Thread>>>();
+    finishedList =  std::make_shared<std::list<std::shared_ptr<Thread>>>();
+    blockedList =  std::make_shared<std::list<std::shared_ptr<Thread>>>();
 }
 
 Scheduler::Scheduler(std::shared_ptr<CPU> c, std::shared_ptr<ScheduleStrategy> s){
 	cpu = c;
 	strat = s;
     readyList =  std::make_shared<std::list<std::shared_ptr<Thread>>>();
+    finishedList =  std::make_shared<std::list<std::shared_ptr<Thread>>>();
+    blockedList =  std::make_shared<std::list<std::shared_ptr<Thread>>>();
 }
 
 
@@ -17,11 +21,12 @@ Scheduler::~Scheduler(){
 }
 
 void Scheduler::run() {
-	if (!cpu->run()) { //run cpu; if thread has completed: 
+    printf("\n[Scheduler]cpu time: %zu\n",cpu->getClockTime());
+	if (!cpu->run() && readyList->size() != 0) { //run cpu; if thread has completed:
+        
 		strat->schedule();
 		return;
 	}
-
 	//otherwise run the strategy to see if we preempt
 	strat->run();
 }
@@ -49,12 +54,13 @@ std::shared_ptr<Thread> Scheduler::preempt(std::shared_ptr<Thread> thread) { //p
 	return cpu->setWorkingThread(thread);
 }
 
-void Scheduler::finishThread(std::shared_ptr<Thread> thread) { //move a specific thread from CPU to Finished List
+void Scheduler::finishThread(std::shared_ptr<Thread> thread) { //move a specific thread from Ready List to Finished List
+	printf("[Scheduler] finish thread Id:%d\n",thread->id);
 	finishedList->push_back(thread);
 }
 
 bool Scheduler::isFinished(){
-	return readyList->size() == 0 && blockedList->size() == 0;
+	return readyList->size() == 0 && blockedList->size() == 0 && !cpu->getStatus();
 }
 
 size_t Scheduler::numFinished(){

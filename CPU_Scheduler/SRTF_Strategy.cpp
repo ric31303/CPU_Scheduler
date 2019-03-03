@@ -22,13 +22,17 @@ void SRTF_Strategy::run() {
 
 void SRTF_Strategy::schedule() {
     std::shared_ptr<Thread> threadToSchedule = std::make_shared<Thread>();
-    for (auto& it: *context->ReadyList){
-        if (it->prevBurstTime < threadToSchedule->prevBurstTime){
-            threadToSchedule = it;
+    if (context->ReadyList->size() > 0){
+        for (auto& it: *context->ReadyList){
+            if (it->prevBurstTime < threadToSchedule->prevBurstTime){
+                threadToSchedule = it;
+            }
         }
+        context->ReadyList->remove(threadToSchedule);
+        context->scheduler->preempt(threadToSchedule); //move scheduled thread to CPU and save the last thread
+        return ;
     }
-    context->ReadyList->remove(threadToSchedule);
-    context->scheduler->preempt(threadToSchedule); //move scheduled thread to CPU and save the last thread
+    context->scheduler->preempt(NULL); //move scheduled thread to CPU and save the last thread
 }
 
 void SRTF_Strategy::addThread() {

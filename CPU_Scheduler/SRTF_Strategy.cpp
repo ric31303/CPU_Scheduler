@@ -1,7 +1,7 @@
 #include "SRTF_Strategy.h"
 
 SRTF_Strategy::SRTF_Strategy(std::shared_ptr<Context> c) : ScheduleStrategy(c) {
-    //nothing needed here for FIFO
+    //nothing needed here for SRTF
 }
 
 void SRTF_Strategy::run() {
@@ -36,7 +36,7 @@ void SRTF_Strategy::schedule() {
 }
 
 void SRTF_Strategy::addThread() {
-    //nothing needed here for FIFO
+    //nothing needed here for SRTF
 }
 
 

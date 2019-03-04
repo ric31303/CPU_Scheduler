@@ -36,6 +36,7 @@ std::shared_ptr<Thread> CPU::setWorkingThread(std::shared_ptr<Thread> newThread)
     
     std::shared_ptr<Thread> oldThread = currThread;
     if (oldThread != NULL) {
+        oldThread->prevBurstTime = getLengthOfCurrentBurst(); //record current burst
         if (getStatus()) {//TODO: this will become more important if/when we actually use a proper time datatype
             oldThread->burstTime.back() = burstTimeLeft;
         } else {

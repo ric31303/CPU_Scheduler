@@ -1,11 +1,11 @@
 #include "Priority_Strategy.h"
 
 Priority_Strategy::Priority_Strategy(std::shared_ptr<Context> c) : ScheduleStrategy(c) {
-    //nothing needed here for SJF
+    //nothing needed here for Priority
 }
 
 void Priority_Strategy::run() {
-    //nothing needed here for SJF
+    //nothing needed here for Priority
 }
 
 void Priority_Strategy::schedule() {
@@ -24,5 +24,5 @@ void Priority_Strategy::schedule() {
 }
 
 void Priority_Strategy::addThread() {
-    //nothing needed here for SJF
+    //nothing needed here for Priority
 }

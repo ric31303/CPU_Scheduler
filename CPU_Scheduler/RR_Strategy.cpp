@@ -11,12 +11,7 @@ void RR_Strategy::run() {
             return ;
         }
     }
-    
-    std::shared_ptr<Thread> threadToSchedule = context->ReadyList->front();
-    if (threadToSchedule != NULL){
-        context->ReadyList->pop_front();
-    }
-    context->scheduler->preempt(threadToSchedule); //move scheduled thread to CPU and save the last thread
+    schedule();
 }
 
 void RR_Strategy::schedule() {
@@ -25,9 +20,8 @@ void RR_Strategy::schedule() {
         context->ReadyList->pop_front();
     }
     context->scheduler->preempt(threadToSchedule); //move scheduled thread to CPU and save the last thread
-    
 }
 
 void RR_Strategy::addThread() {
-    //nothing needed here for FIFO
+    //nothing needed here for RR
 }

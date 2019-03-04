@@ -1,7 +1,7 @@
 #include "PreemptPriority_Strategy.h"
 
 PreemptPriority_Strategy::PreemptPriority_Strategy(std::shared_ptr<Context> c) : ScheduleStrategy(c) {
-    //nothing needed here for SJF
+    //nothing needed here for PP
 }
 
 void PreemptPriority_Strategy::run() {
@@ -36,5 +36,5 @@ void PreemptPriority_Strategy::schedule() {
 }
 
 void PreemptPriority_Strategy::addThread() {
-    //nothing needed here for SJF
+    //nothing needed here for PP
 }

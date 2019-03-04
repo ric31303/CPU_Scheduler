@@ -25,7 +25,7 @@ int main(int argc, char *argv[]){
     // logging
     std::string outputPath = "results/FIFO_test.json";
     std::shared_ptr<json_logging> logging = std::make_shared<json_logging>(outputPath,"FIFO");
-//    s->setLogging(logging);
+    s->setLogging(logging);
 
     // parameters
     std::vector<size_t> burstTimes = {2};
@@ -81,9 +81,10 @@ int main(int argc, char *argv[]){
     fin.close();
     logging->ThreadsEnd();
     
-    printf("Before run cpu, the number of threads:%d\n",ThreadsCounter);
     
     //run scheduler
+    printf("Before run cpu, the number of threads:%d\n",ThreadsCounter);
+    logging->simulationStart();
     while (!s->isFinished() or ThreadsCounter> 0) {
         
         // check arriveTime
@@ -95,9 +96,20 @@ int main(int argc, char *argv[]){
             }
         }
         s->run();
+
+        // log testing
+        int n = 3;
+        int* numberArray = new int[n];
+        for (int i = 0; i < n; i++) {
+            numberArray[i] = i;
+        }
+        logging->writeSimulation(numberArray,3,1,3,4,5);
+        // log testing
+        
         std::cout <<"   number of finished threads:"<< s->numFinished() << "\n";
         std::this_thread::sleep_for(std::chrono::microseconds(1000)); // sleep for 1ms
     }
+    logging->simulationEnd();
     logging->end();
 //    int x;
 //

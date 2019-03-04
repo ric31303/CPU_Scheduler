@@ -1,5 +1,6 @@
 #include <fstream>
-
+#ifndef _json_logging_
+#define _json_logging_
 class json_logging
 {
 public:
@@ -10,7 +11,7 @@ public:
     void writeThread(int);
     void ThreadsEnd();
     void simulationStart();
-    void writeSimulation(int* , int,int,int,int);
+    void writeSimulation(int* ,int, int, int, int, int);
     void simulationEnd();
     void end();
     
@@ -20,3 +21,4 @@ private:
     bool commas = false;
 };
 
+#endif

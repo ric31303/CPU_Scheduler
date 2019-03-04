@@ -43,10 +43,11 @@ void json_logging::writeThread(int arriveTime) {//run this every clock tick
     if (commas) {
         result<<",\n";
     }
-    std::string blanks(size, ' ');
-    result<<blanks+"{\n";
-    result<<blanks+blanks+'"'+"arriveTime"+'"'+":"+'"'+std::to_string(arriveTime)+'"';
-    result<<"\n"+blanks+"}";
+    std::string blanks1(size*2, ' ');
+    std::string blanks2(size*3, ' ');
+    result<<blanks1+"{\n";
+    result<<blanks2+'"'+"arriveTime"+'"'+":"+std::to_string(arriveTime);
+    result<<"\n"+blanks1+"}";
    
     commas = true;
 }
@@ -55,17 +56,36 @@ void json_logging::ThreadsEnd() {//run this every clock tick
     result<<"],\n";
 }
 
-//void json_logging::simulationStart() {//run this every clock tick
-//    commas = false;
-//    std::string blanks(size, ' ');
-//    result<<blanks+'"'+"simulations"+'"'+":[\n";
-//}
-//
-//void json_logging::writeSimulation(int *readyList, int,int,int,int) {//run this every clock tick
-//
-//}
-//
-//void json_logging::simulationEnd() {//run this every clock tick
-//    result<<"],\n";
-//}
+void json_logging::simulationStart() {//run this every clock tick
+    commas = false;
+    std::string blanks(size, ' ');
+    result<<blanks+'"'+"simulations"+'"'+":[\n";
+}
+
+void json_logging::writeSimulation(int *moveToReadyList, int moveToReadyListSize, int cycleTime, int moveToCPU, int moveToBlockList, int moveToFinishedList) {//run this every clock tick
+    if (commas) {
+        result<<",\n";
+    }
+    std::string blanks1(size*2, ' ');
+    std::string blanks2(size*3, ' ');
+    result<<blanks1+"{\n";
+    result<<blanks2+'"'+"cycleTime"+'"'+":"+std::to_string(cycleTime)+",\n";
+    result<<blanks2+'"'+"moveToReadyList"+'"'+":"+"[";
+    for (int i =0;i<moveToReadyListSize;i++) {
+        result<<std::to_string(moveToReadyList[i]);
+        if(i!=moveToReadyListSize-1) {
+            result<<",";
+        }
+    }
+    result<<"],\n";
+    result<<blanks2+'"'+"moveToCPU"+'"'+":"+std::to_string(moveToCPU)+",\n";
+    result<<blanks2+'"'+"moveToBlockList"+'"'+":"+std::to_string(moveToBlockList)+",\n";
+    result<<blanks2+'"'+"moveToFinishedList"+'"'+":"+std::to_string(moveToFinishedList)+"\n";
+    result<<blanks1+"}";
+    commas = true;
+}
+
+void json_logging::simulationEnd() {//run this every clock tick
+    result<<"]\n";
+}
 

@@ -7,7 +7,7 @@
 
 #include "ScheduleStrategy.h" //predefines Context
 #include "Context.h"          //predefines Scheduler
-//#include "json_logging.h" // logging
+#include "json_logging.h" // logging
 
 class Scheduler : public std::enable_shared_from_this<Scheduler>
 {
@@ -24,7 +24,7 @@ public:
 	std::shared_ptr<Thread> preempt(std::shared_ptr<Thread> thread);//preempt the current thread on the CPU
 	void finishThread(std::shared_ptr<Thread> thread);//move a specific thread from CPU to Finished List
     void updateStrat(std::shared_ptr<ScheduleStrategy> _strat);//move a specific thread from Ready List to Finished List
-//    void setLogging(std::shared_ptr<json_logging>);
+    void setLogging(std::shared_ptr<json_logging>);
 	bool isFinished();
 	size_t numFinished();
 	std::shared_ptr<Context> getContext();
@@ -40,6 +40,6 @@ private:
 	std::shared_ptr<Context> context;
 
 	std::shared_ptr<ScheduleStrategy> strat;
-//    std::shared_ptr<json_logging> logging;
+    std::shared_ptr<json_logging> logging;
 };
 

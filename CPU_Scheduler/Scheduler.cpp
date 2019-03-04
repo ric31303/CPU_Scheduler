@@ -35,9 +35,9 @@ void Scheduler::run() {
 void Scheduler::updateStrat(std::shared_ptr<ScheduleStrategy> _strat) {
     strat = _strat;
 }
-//void Scheduler::setLogging(std::shared_ptr<json_logging> _logging) {
-//    logging = _logging;
-//}
+void Scheduler::setLogging(std::shared_ptr<json_logging> _logging) {
+    logging = _logging;
+}
 
 
 void Scheduler::addNewThread(std::shared_ptr<Thread> thread) {

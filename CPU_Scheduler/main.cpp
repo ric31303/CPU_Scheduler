@@ -12,14 +12,21 @@
 #include "PreemptPriority_Strategy.h"
 #include "RR_Strategy.h"
 #include "Lottery_Strategy.h"
+#include "json_logging.h"
 
 int main(int argc, char *argv[]){
+    
     std::shared_ptr<CPU> c = std::make_shared<CPU>();
     std::shared_ptr<ScheduleStrategy> strat;
     std::shared_ptr<Scheduler> s = std::make_shared<Scheduler>(c, strat);
-    strat = std::make_shared<Lottery_Strategy>(s->getContext());
+    strat = std::make_shared<FIFO_Strategy>(s->getContext());
     s->updateStrat(strat);
     
+    // logging
+    std::string outputPath = "results/FIFO_test.json";
+    std::shared_ptr<json_logging> logging = std::make_shared<json_logging>(outputPath,"FIFO");
+//    s->setLogging(logging);
+
     // parameters
     std::vector<size_t> burstTimes = {2};
     std::string path = "tests/test.txt"; // default
@@ -32,6 +39,7 @@ int main(int argc, char *argv[]){
     std::shared_ptr<std::list<std::shared_ptr<Thread>>> beforeReady =  std::make_shared<std::list<std::shared_ptr<Thread>>>();;
    
     // read test data
+    logging->ThreadsStart();
     std::ifstream fin;
     fin.open(path);
     if(!fin){
@@ -53,6 +61,7 @@ int main(int argc, char *argv[]){
             while(getline(linestream,element,',')) {
                 if (lineCount == 0) {
                     arrive = stod(element);
+                    logging->writeThread(arrive);
                 } else if (lineCount == 1) {
                     priority = stod(element);
                 } else if (lineCount == 2) {
@@ -70,7 +79,7 @@ int main(int argc, char *argv[]){
         
     }
     fin.close();
-    
+    logging->ThreadsEnd();
     
     printf("Before run cpu, the number of threads:%d\n",ThreadsCounter);
     
@@ -85,12 +94,11 @@ int main(int argc, char *argv[]){
                 ThreadsCounter--;
             }
         }
-        
         s->run();
         std::cout <<"   number of finished threads:"<< s->numFinished() << "\n";
         std::this_thread::sleep_for(std::chrono::microseconds(1000)); // sleep for 1ms
     }
-
+    logging->end();
 //    int x;
 //
 //    std::cin >> x;

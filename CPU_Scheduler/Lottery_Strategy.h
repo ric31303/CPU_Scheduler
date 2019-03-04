@@ -11,5 +11,5 @@ public:
     
 private:
     const size_t timeQuantum = 3;
-    
+    size_t randomOffset;    //to make rand() more random every run
 };

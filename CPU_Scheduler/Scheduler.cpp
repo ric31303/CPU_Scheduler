@@ -13,6 +13,7 @@ Scheduler::Scheduler(std::shared_ptr<CPU> c, std::shared_ptr<ScheduleStrategy> s
     readyList =  std::make_shared<std::list<std::shared_ptr<Thread>>>();
     finishedList =  std::make_shared<std::list<std::shared_ptr<Thread>>>();
     blockedList =  std::make_shared<std::list<std::shared_ptr<Thread>>>();
+//    logging = std::make_shared<json_logging>("results/test.json");
 }
 
 
@@ -34,6 +35,10 @@ void Scheduler::run() {
 void Scheduler::updateStrat(std::shared_ptr<ScheduleStrategy> _strat) {
     strat = _strat;
 }
+//void Scheduler::setLogging(std::shared_ptr<json_logging> _logging) {
+//    logging = _logging;
+//}
+
 
 void Scheduler::addNewThread(std::shared_ptr<Thread> thread) {
     

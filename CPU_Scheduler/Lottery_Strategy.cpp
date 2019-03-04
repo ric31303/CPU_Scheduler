@@ -18,13 +18,13 @@ void Lottery_Strategy::schedule() {
     if (context->ReadyList->size() > 0){
         auto lotteryPool =  std::make_shared<std::list<std::shared_ptr<Thread>>>();
         for (auto& it: *context->ReadyList){
-            lotteryPool->push_back(it);
+            lotteryPool->push_back(it); //every job get one ticket
             if (it->prevBurstTime < timeQuantum){
-                lotteryPool->push_back(it);
+                lotteryPool->push_back(it);  //shorter job get one more ticket
             }
         }
         std::list<std::shared_ptr<Thread>>::iterator it = lotteryPool->begin();
-        std::advance(it, rand()% lotteryPool->size());
+        std::advance(it, rand()% lotteryPool->size());  //random choose one frome the pool
         std::shared_ptr<Thread> threadToSchedule = *it;
         context->ReadyList->remove(threadToSchedule);
         context->scheduler->preempt(threadToSchedule); //move scheduled thread to CPU and save the last thread

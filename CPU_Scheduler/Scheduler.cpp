@@ -57,8 +57,10 @@ std::shared_ptr<Thread> Scheduler::preempt(std::shared_ptr<Thread> thread) { //p
         return lastThread;
     }
     
-    if (lastThread != NULL && lastThread->isFinished()){
+    if (lastThread->isFinished()){
         finishThread(lastThread);
+    } else if (lastThread->needsIO){
+        blockThread(lastThread);
     } else {
         readyList->push_back(lastThread); // if not finished then push in to readyList
     }

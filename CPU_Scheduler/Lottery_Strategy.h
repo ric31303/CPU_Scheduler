@@ -11,4 +11,5 @@ public:
     
 private:
     const size_t timeQuantum = 3;
+    std::shared_ptr<std::list<std::shared_ptr<Thread>>> lotteryPool;
 };

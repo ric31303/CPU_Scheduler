@@ -1,7 +1,8 @@
 #include "Lottery_Strategy.h"
 
 Lottery_Strategy::Lottery_Strategy(std::shared_ptr<Context> c) : ScheduleStrategy(c) {
-    //nothing needed here for FIFO
+    
+    lotteryPool = std::make_shared<std::list<std::shared_ptr<Thread>>>();
 }
 
 void Lottery_Strategy::run() {

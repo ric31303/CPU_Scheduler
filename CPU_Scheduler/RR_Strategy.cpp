@@ -1,7 +1,8 @@
 #include "RR_Strategy.h"
 
 RR_Strategy::RR_Strategy(std::shared_ptr<Context> c) : ScheduleStrategy(c) {
-    //nothing needed here for FIFO
+    //nothing needed here for RR
+
 }
 
 void RR_Strategy::run() {

@@ -42,6 +42,8 @@ std::shared_ptr<Thread> CPU::setWorkingThread(std::shared_ptr<Thread> newThread)
             oldThread->burstTime.pop_back();
             if (oldThread->burstTime.size() <= 1){ // if no more bursttime then finished
                 oldThread->finish = true;
+            }else {
+                oldThread->needsIO = true;  // otherwise means block by IO
             }
         }
     }

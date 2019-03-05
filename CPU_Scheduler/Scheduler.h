@@ -7,7 +7,7 @@
 
 #include "ScheduleStrategy.h" //predefines Context
 #include "Context.h"          //predefines Scheduler
-#include "json_logging.h" // logging
+
 
 class Scheduler : public std::enable_shared_from_this<Scheduler>
 {
@@ -24,22 +24,28 @@ public:
 	std::shared_ptr<Thread> preempt(std::shared_ptr<Thread> thread);//preempt the current thread on the CPU
 	void finishThread(std::shared_ptr<Thread> thread);//move a specific thread from CPU to Finished List
     void updateStrat(std::shared_ptr<ScheduleStrategy> _strat);//move a specific thread from Ready List to Finished List
-    void setLogging(std::shared_ptr<json_logging>);
 	bool isFinished();
 	size_t numFinished();
 	std::shared_ptr<Context> getContext();
     std::shared_ptr<Thread> getCurrThread();
     size_t getCurrBurst();
     
+    int* getTemp() {
+        return temp;
+    }
 private:
 	std::shared_ptr<CPU> cpu;
 	std::shared_ptr<std::list<std::shared_ptr<Thread>>> finishedList;
     std::shared_ptr<std::list<std::shared_ptr<Thread>>> readyList;
 	std::shared_ptr<std::list<std::shared_ptr<Thread>>> blockedList;
-
+    
 	std::shared_ptr<Context> context;
-
 	std::shared_ptr<ScheduleStrategy> strat;
-    std::shared_ptr<json_logging> logging;
+    
+    int temp[4] = {-1, -1, -1 ,-1};
+//    int tempMoveToCPU = -1;
+//    int tempMoveToBlock = -1;
+//    int tempMoveToFinished = -1;
+//    int tempCPUTime = -1;
 };
 

@@ -13,7 +13,6 @@ Scheduler::Scheduler(std::shared_ptr<CPU> c, std::shared_ptr<ScheduleStrategy> s
     readyList =  std::make_shared<std::list<std::shared_ptr<Thread>>>();
     finishedList =  std::make_shared<std::list<std::shared_ptr<Thread>>>();
     blockedList =  std::make_shared<std::list<std::shared_ptr<Thread>>>();
-//    logging = std::make_shared<json_logging>("results/test.json");
 }
 
 
@@ -22,6 +21,13 @@ Scheduler::~Scheduler(){
 }
 
 void Scheduler::run() {
+    
+    // init temp
+    temp[0]  = static_cast<int>(cpu->getClockTime());
+    temp[1] = -1;
+    temp[2] = -1;
+    temp[3] = -1;
+    
     printf("\n[Scheduler]cpu time: %zu\n",cpu->getClockTime());
 	if (!cpu->run()) { //run cpu; if thread has completed:
         
@@ -35,32 +41,34 @@ void Scheduler::run() {
 void Scheduler::updateStrat(std::shared_ptr<ScheduleStrategy> _strat) {
     strat = _strat;
 }
-void Scheduler::setLogging(std::shared_ptr<json_logging> _logging) {
-    logging = _logging;
-}
-
 
 void Scheduler::addNewThread(std::shared_ptr<Thread> thread) {
-    
     readyList->push_back(thread);
     strat->addThread(); //TODO: should the strategy be allowed to push the added thread?
 }
 
 void Scheduler::readyThread(std::shared_ptr<Thread> thread) { //move a specific thread from Blocked List to Ready List
-	blockedList->remove(thread);//TODO: try this first
+    blockedList->remove(thread);//TODO: try this first
 	readyList->push_back(thread);
 }
 
 void Scheduler::blockThread(std::shared_ptr<Thread> thread) { //move a specific thread from CPU to Blocked List
+    // set logging temp
+    temp[2] = thread->id;
 	blockedList->push_back(thread);
 }
 
 std::shared_ptr<Thread> Scheduler::preempt(std::shared_ptr<Thread> thread) { //preempt the current thread on the CPU
-	
+    
+    // set logging temp
+    if (thread != NULL) {
+        temp[1] = thread->id;
+    }
     std::shared_ptr<Thread> lastThread = cpu->setWorkingThread(thread);
     if( lastThread == NULL ){
         return lastThread;
     }
+    
     
     if (lastThread->isFinished()){
         finishThread(lastThread);
@@ -74,6 +82,8 @@ std::shared_ptr<Thread> Scheduler::preempt(std::shared_ptr<Thread> thread) { //p
 
 void Scheduler::finishThread(std::shared_ptr<Thread> thread) { //move a specific thread from Ready List to Finished List
 	printf("[Scheduler] finish thread Id:%d\n",thread->id);
+    // set logging temp
+    temp[3] = thread->id;
 	finishedList->push_back(thread);
 }
 

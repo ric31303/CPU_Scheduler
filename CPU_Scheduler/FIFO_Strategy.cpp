@@ -9,7 +9,8 @@ void FIFO_Strategy::run() {
 }
 
 void FIFO_Strategy::schedule() {
-    std::shared_ptr<Thread> threadToSchedule = context->ReadyList->front();
+    std::shared_ptr<Thread> threadToSchedule = std::make_shared<Thread>();
+    threadToSchedule = context->ReadyList->front();
     if (threadToSchedule != NULL){
         context->ReadyList->pop_front();
     }

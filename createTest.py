@@ -18,6 +18,8 @@ if __name__ == "__main__":
 		if i == 1:
 			filename = sys.argv[i]
 		elif i == 2:
+			threadNum = int(sys.argv[i])
+		elif i == 3:
 			maxBurstAndIONum = int(sys.argv[i])
 	#check
 	if threadNum < 1:

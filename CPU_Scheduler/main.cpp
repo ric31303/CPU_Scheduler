@@ -23,13 +23,12 @@ int main(int argc, char *argv[]){
     s->updateStrat(strat);
     
     // logging
-    std::string outputPath = "results/FIFO_test.json";
+    std::string outputPath = "results/FIFO_test1.json";
     std::shared_ptr<json_logging> logging = std::make_shared<json_logging>(outputPath,"FIFO");
-    s->setLogging(logging);
 
     // parameters
     std::vector<size_t> burstTimes = {2};
-    std::string path = "tests/test.txt"; // default
+    std::string path = "tests/test_size10.txt"; // default
     int ThreadsCounter = 0;
     
     // get file path
@@ -87,23 +86,30 @@ int main(int argc, char *argv[]){
     logging->simulationStart();
     while (!s->isFinished() or ThreadsCounter> 0) {
         
+        int initialPointer = 10;
+        int * moveReadyList = &(initialPointer);;
+        int readyCounter = 0;
         // check arriveTime
         if(beforeReady->front()!=NULL) {
             while( ThreadsCounter> 0 &&c->getClockTime() >= beforeReady->front()->lastReadyTime) {
                 s->addNewThread(beforeReady->front());
+                // write temp for logging
+                *(moveReadyList+readyCounter) = beforeReady->front()->id;
+                printf("    test pointer threads:%d\n",*(moveReadyList+readyCounter));
                 beforeReady->pop_front();
                 ThreadsCounter--;
+                readyCounter++;
             }
         }
         s->run();
-
+        int * logging_temp = s->getTemp();
         // log testing
         int n = 3;
         int* numberArray = new int[n];
         for (int i = 0; i < n; i++) {
             numberArray[i] = i;
         }
-        logging->writeSimulation(numberArray,3,1,3,4,5);
+        logging->writeSimulation(moveReadyList,readyCounter,logging_temp[0],logging_temp[1],logging_temp[2],logging_temp[3]);
         // log testing
         
         std::cout <<"   number of finished threads:"<< s->numFinished() << "\n";

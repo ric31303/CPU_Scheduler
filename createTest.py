@@ -2,7 +2,8 @@ import sys
 import random
 
 maxBurstTime = 10
-maxBurstNum = 1
+maxBurstAndIONum = 10
+minBurstAndIONum = 3
 threadNum = 100
 arriveTimeRange = 5
 priorityRange = 10
@@ -23,13 +24,15 @@ if __name__ == "__main__":
 	arriveTime = 0
 	for i in range(threadNum):
 
-		burstNum = random.randint(1, maxBurstNum)
+		burstAndIONum = random.randint(minBurstAndIONum, maxBurstAndIONum)
+		if burstAndIONum%2 == 0:
+			burstAndIONum+=1
 		priority = random.randint(1, priorityRange)
 
 		fo.write(str(arriveTime))
 		fo.write(",")
 		fo.write(str(priority))
-		for i in range(burstNum):
+		for i in range(burstAndIONum):
 			burstTime = random.randint(1, maxBurstTime)
 			fo.write(",")
 			fo.write(str(burstTime))

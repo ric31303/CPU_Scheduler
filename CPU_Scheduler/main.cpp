@@ -3,6 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include <thread>
+#include <map>
 
 #include "Scheduler.h"
 #include "FIFO_Strategy.h"
@@ -14,13 +15,48 @@
 #include "Lottery_Strategy.h"
 #include "json_logging.h"
 
+#define Strategy(x) strat = std::make_shared<x>(s->getContext())
+void Help(void){
+    printf("Scheduler.\n\n");
+    printf("Usage:\n");
+    printf("\tScheduler   \t FIFO Strategy is used.\n");
+    printf("\tScheduler ff\t FIFO Strategy is used.\n");
+    printf("\tScheduler rr\t Round Robin Strategy is used.\n");
+    printf("\tScheduler sjf\t SJF Strategy is used.\n");
+    printf("\tScheduler srtf\t SRTF Strategy is used.\n");
+    printf("\tScheduler p\t Priority Strategy is used.\n");
+    printf("\tScheduler pp\t Preemtive Priority Strategy is used.\n");
+    printf("\tScheduler l\t Lottery Strategy is used.\n\n");
+    printf("Options:\n");
+    printf("\t-h\t\t Show this screen.\n");
+}
 int main(int argc, char *argv[]){
     
     std::shared_ptr<CPU> c = std::make_shared<CPU>();
     std::shared_ptr<IO> io = std::make_shared<IO>();
     std::shared_ptr<ScheduleStrategy> strat;
     std::shared_ptr<Scheduler> s = std::make_shared<Scheduler>(c, io, strat);
-    strat = std::make_shared<RR_Strategy>(s->getContext());
+    
+    std::map<std::string, int> m;
+    m["ff"] = 0; m["rr"] = 1; m["sjf"] = 2; m["srtf"] = 3; m["p"] = 4; m["pp"] = 5; m["l"] = 6;
+    if (argc >= 2){
+        if (std::string(argv[1]) == "-h"){
+            Help();
+            return 0;
+        }
+        switch (m[argv[1]]) {
+            case 0: Strategy(FIFO_Strategy);            break;
+            case 1: Strategy(RR_Strategy);              break;
+            case 2: Strategy(SJF_Strategy);             break;
+            case 3: Strategy(SRTF_Strategy);            break;
+            case 4: Strategy(Priority_Strategy);        break;
+            case 5: Strategy(PreemptPriority_Strategy); break;
+            case 6: Strategy(Lottery_Strategy);         break;
+            default: Strategy(FIFO_Strategy);           break;
+        }
+    }else {
+        strat = std::make_shared<FIFO_Strategy>(s->getContext());
+    }
     s->updateStrat(strat);
     
     // logging
@@ -125,4 +161,9 @@ int main(int argc, char *argv[]){
 //    std::cin >> x;
 
     //system("pause");
+    if( argc >= 2){
+        printf("\nStrategy: %s used.\n",argv[1]);
+    }else {
+        printf("\nStrategy: FIFO used.\n");
+    }
 }

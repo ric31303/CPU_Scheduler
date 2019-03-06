@@ -1,23 +1,23 @@
-#include "CPU.h"
+#include "IO.h"
 
-CPU::CPU(){
+IO::IO(){
 }
 
 
-CPU::~CPU()
+IO::~IO()
 {
 }
 
-bool CPU::run() {//run this every clock tick
+bool IO::run() {//run this every clock tick
     currTime++; //TODO: change this to use a real time datatype at some point／
     if (burstTimeLeft != 0) {
         burstTimeLeft--;
     }
-
+    
     return getStatus();
 }
 
-bool CPU::getStatus() {
+bool IO::getStatus() {
     if (burstTimeLeft <= 0) {//TODO: this will become more important if/when we actually use a proper time datatype
         
         return false;
@@ -27,30 +27,26 @@ bool CPU::getStatus() {
     }
 }
 
-size_t CPU::getLengthOfCurrentBurst(){
+size_t IO::getLengthOfCurrentBurst(){
     return currTime - currBurstStart;
 }
 
-std::shared_ptr<Thread> CPU::setWorkingThread(std::shared_ptr<Thread> newThread) {
+std::shared_ptr<Thread> IO::setWorkingThread(std::shared_ptr<Thread> newThread) {
     printf("[cpu] setWorkingThread\n");
     
     std::shared_ptr<Thread> oldThread = currThread;
     if (oldThread != NULL) {
-        
+        oldThread->prevBurstTime = getLengthOfCurrentBurst(); //record current burst
         if (getStatus()) {//TODO: this will become more important if/when we actually use a proper time datatype
-            if (newThread == NULL){
-                return NULL;    // if no newThread and not completed don't preempt
-            }
             oldThread->burstTime.back() = burstTimeLeft;
         } else {
             oldThread->burstTime.pop_back();
-            if (oldThread->burstTime.size() == 0){ // if no more bursttime then finished
+            if (oldThread->burstTime.size() <= 1){ // if no more bursttime then finished
                 oldThread->finish = true;
             }else {
                 oldThread->needsIO = true;  // otherwise means block by IO
             }
         }
-        oldThread->prevBurstTime = getLengthOfCurrentBurst(); //record current burst
     }
     if (newThread == NULL) {//Stop executing
         burstTimeLeft = 0;
@@ -64,6 +60,6 @@ std::shared_ptr<Thread> CPU::setWorkingThread(std::shared_ptr<Thread> newThread)
     
 }
 
-std::shared_ptr<Thread> CPU::getWorkingThread() {
+std::shared_ptr<Thread> IO::getWorkingThread() {
     return currThread;
 }

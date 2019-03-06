@@ -4,7 +4,7 @@
 #include <memory>
 
 #include "CPU.h"
-
+#include "IO.h"
 #include "ScheduleStrategy.h" //predefines Context
 #include "Context.h"          //predefines Scheduler
 
@@ -13,7 +13,7 @@ class Scheduler : public std::enable_shared_from_this<Scheduler>
 {
 public:
 	Scheduler();
-	Scheduler(std::shared_ptr<CPU> c, std::shared_ptr<ScheduleStrategy> s);
+	Scheduler(std::shared_ptr<CPU> c, std::shared_ptr<IO> &i, std::shared_ptr<ScheduleStrategy> s);
 	~Scheduler();
 
 	void run();
@@ -35,6 +35,7 @@ public:
     }
 private:
 	std::shared_ptr<CPU> cpu;
+    std::shared_ptr<IO> io;
 	std::shared_ptr<std::list<std::shared_ptr<Thread>>> finishedList;
     std::shared_ptr<std::list<std::shared_ptr<Thread>>> readyList;
 	std::shared_ptr<std::list<std::shared_ptr<Thread>>> blockedList;

@@ -7,12 +7,14 @@ Scheduler::Scheduler(){//TODO: do this once we have strategies
     blockedList =  std::make_shared<std::list<std::shared_ptr<Thread>>>();
 }
 
-Scheduler::Scheduler(std::shared_ptr<CPU> c, std::shared_ptr<ScheduleStrategy> s){
+Scheduler::Scheduler(std::shared_ptr<CPU> c, std::shared_ptr<IO> &i, std::shared_ptr<ScheduleStrategy> s){
 	cpu = c;
 	strat = s;
     readyList =  std::make_shared<std::list<std::shared_ptr<Thread>>>();
     finishedList =  std::make_shared<std::list<std::shared_ptr<Thread>>>();
     blockedList =  std::make_shared<std::list<std::shared_ptr<Thread>>>();
+    io = std::make_shared<IO>(blockedList);
+    i = io;
 }
 
 
@@ -29,6 +31,10 @@ void Scheduler::run() {
     temp[3] = -1;
     
     printf("\n[Scheduler]cpu time: %zu\n",cpu->getClockTime());
+    std::shared_ptr<Thread> wakeThread = io->run();  //run io
+    if (wakeThread != NULL){
+        readyThread(wakeThread);
+    }
 	if (!cpu->run()) { //run cpu; if thread has completed:
         
 		strat->schedule();
@@ -36,6 +42,7 @@ void Scheduler::run() {
 	}
 	//otherwise run the strategy to see if we preempt
 	strat->run();
+    
 }
 
 void Scheduler::updateStrat(std::shared_ptr<ScheduleStrategy> _strat) {
@@ -48,12 +55,14 @@ void Scheduler::addNewThread(std::shared_ptr<Thread> thread) {
 }
 
 void Scheduler::readyThread(std::shared_ptr<Thread> thread) { //move a specific thread from Blocked List to Ready List
+//    printf("[Scheduler] wake thread Id:%d\n",thread->id);
     blockedList->remove(thread);//TODO: try this first
 	readyList->push_back(thread);
 }
 
 void Scheduler::blockThread(std::shared_ptr<Thread> thread) { //move a specific thread from CPU to Blocked List
     // set logging temp
+//    printf("[Scheduler] block thread Id:%d\n",thread->id);
     temp[2] = thread->id;
 	blockedList->push_back(thread);
 }

@@ -17,9 +17,10 @@
 int main(int argc, char *argv[]){
     
     std::shared_ptr<CPU> c = std::make_shared<CPU>();
+    std::shared_ptr<IO> io = std::make_shared<IO>();
     std::shared_ptr<ScheduleStrategy> strat;
-    std::shared_ptr<Scheduler> s = std::make_shared<Scheduler>(c, strat);
-    strat = std::make_shared<FIFO_Strategy>(s->getContext());
+    std::shared_ptr<Scheduler> s = std::make_shared<Scheduler>(c, io, strat);
+    strat = std::make_shared<RR_Strategy>(s->getContext());
     s->updateStrat(strat);
     
     // logging
@@ -27,8 +28,8 @@ int main(int argc, char *argv[]){
     std::shared_ptr<json_logging> logging = std::make_shared<json_logging>(outputPath,"FIFO");
 
     // parameters
-    std::vector<size_t> burstTimes = {2};
-    std::string path = "tests/test_size10.txt"; // default
+    std::vector<size_t> burstTimes = {};
+    std::string path = "tests/test3.txt"; // default
     int ThreadsCounter = 0;
     
     // get file path
@@ -57,20 +58,22 @@ int main(int argc, char *argv[]){
             size_t burst = 0;
             
             // read each line, assume each line only has [arriveTime,priority, burstTime]
+            burstTimes = {};
             while(getline(linestream,element,',')) {
                 if (lineCount == 0) {
                     arrive = stod(element);
                     logging->writeThread(arrive);
                 } else if (lineCount == 1) {
                     priority = stod(element);
-                } else if (lineCount == 2) {
+                } else if (lineCount >= 2) {
                     burst = stod(element);
+                    burstTimes.push_back(burst);
                 } else {
                     break;
                 }
                 lineCount++;
             }
-            burstTimes = {burst};
+            
             std::shared_ptr<Thread> newThread(new Thread(ThreadsCounter,arrive,burstTimes,priority));
             beforeReady->push_back(newThread);
             ThreadsCounter++;
@@ -113,7 +116,7 @@ int main(int argc, char *argv[]){
         // log testing
         
         std::cout <<"   number of finished threads:"<< s->numFinished() << "\n";
-        std::this_thread::sleep_for(std::chrono::microseconds(1000)); // sleep for 1ms
+        std::this_thread::sleep_for(std::chrono::microseconds(100)); // sleep for 0.1ms
     }
     logging->simulationEnd();
     logging->end();

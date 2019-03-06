@@ -1,5 +1,6 @@
 #pragma once
 #include <memory>
+#include <list>
 
 #include "Thread.h"
 
@@ -7,21 +8,18 @@ class IO
 {
 public:
     IO();
+    IO(std::shared_ptr<std::list<std::shared_ptr<Thread>>> ioList);
     ~IO();
     
-    bool run();//run this every clock tick
+    std::shared_ptr<Thread> run();//run this every clock tick
     bool getStatus();
-    size_t getLengthOfCurrentBurst();
-    std::shared_ptr<Thread> setWorkingThread(std::shared_ptr<Thread> newThread);
+    void setWorkingThread(std::shared_ptr<Thread> thread);
     std::shared_ptr<Thread> getWorkingThread();
-    
-    size_t getClockTime() { return currTime; }
-    
+
 private:
+    std::shared_ptr<std::list<std::shared_ptr<Thread>>> IOList = NULL;
     std::shared_ptr<Thread> currThread = NULL;
     size_t burstTimeLeft = 0;
-    
-    size_t currTime = 0;
-    size_t currBurstStart = 0;
+
 };
 

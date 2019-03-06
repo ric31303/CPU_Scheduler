@@ -37,8 +37,9 @@ std::shared_ptr<Thread> CPU::setWorkingThread(std::shared_ptr<Thread> newThread)
     std::shared_ptr<Thread> oldThread = currThread;
     if (oldThread != NULL) {
         
-        if (getStatus()) {//TODO: this will become more important if/when we actually use a proper time datatype
+        if (burstTimeLeft > 0) {//TODO: this will become more important if/when we actually use a proper time datatype
             if (newThread == NULL){
+                currBurstStart = currTime;
                 return NULL;    // if no newThread and not completed don't preempt
             }
             oldThread->burstTime.back() = burstTimeLeft;
@@ -54,6 +55,7 @@ std::shared_ptr<Thread> CPU::setWorkingThread(std::shared_ptr<Thread> newThread)
     }
     if (newThread == NULL) {//Stop executing
         burstTimeLeft = 0;
+        currThread = newThread;
     }else{
         currThread = newThread;
         currThread->addWaitTime(currTime);

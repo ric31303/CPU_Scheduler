@@ -23,7 +23,7 @@ int main(int argc, char *argv[]){
     s->updateStrat(strat);
     
     // logging
-    std::string outputPath = "results/FIFO_test1.json";
+    std::string outputPath = "results/new_test10.json";
     std::shared_ptr<json_logging> logging = std::make_shared<json_logging>(outputPath,"FIFO");
 
     // parameters
@@ -43,7 +43,7 @@ int main(int argc, char *argv[]){
     fin.open(path);
     if(!fin){
         // no file
-        printf("found no file\n");
+        printf("[main] found no file\n");
         return 0;
     } else {
         std::string line;
@@ -82,7 +82,7 @@ int main(int argc, char *argv[]){
     
     
     //run scheduler
-    printf("Before run cpu, the number of threads:%d\n",ThreadsCounter);
+    printf("[main] Before run cpu, the number of threads:%d\n",ThreadsCounter);
     logging->simulationStart();
     while (!s->isFinished() or ThreadsCounter> 0) {
         

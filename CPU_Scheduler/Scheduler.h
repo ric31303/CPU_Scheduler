@@ -29,7 +29,8 @@ public:
 	std::shared_ptr<Context> getContext();
     std::shared_ptr<Thread> getCurrThread();
     size_t getCurrBurst();
-    
+    size_t getAvgWaitingTime();
+    size_t getAvgTATTime();
     int* getTemp() {
         return temp;
     }

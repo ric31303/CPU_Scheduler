@@ -119,3 +119,9 @@ std::shared_ptr<Thread> Scheduler::getCurrThread(){
 size_t Scheduler::getCurrBurst(){
     return cpu->getLengthOfCurrentBurst();
 }
+
+//size_t Scheduler::getAvgWaitingTime(){
+//}
+//
+//size_t Scheduler::getAvgTATTime(){
+//}

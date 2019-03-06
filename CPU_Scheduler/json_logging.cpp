@@ -39,16 +39,17 @@ void json_logging::ThreadsStart() {//run this every clock tick
     result<<blanks+'"'+"threads"+'"'+":[\n";
 }
 
-void json_logging::writeThread(int arriveTime) {//run this every clock tick
+void json_logging::writeThread(int totalBurstTime, int arriveTime, int priority) {//run this every clock tick
     if (commas) {
         result<<",\n";
     }
     std::string blanks1(size*2, ' ');
     std::string blanks2(size*3, ' ');
     result<<blanks1+"{\n";
-    result<<blanks2+'"'+"arriveTime"+'"'+":"+std::to_string(arriveTime);
+    result<<blanks2+'"'+"priority"+'"'+":"+std::to_string(priority)+",\n";
+    result<<blanks2+'"'+"arriveTime"+'"'+":"+std::to_string(arriveTime)+",\n";
+    result<<blanks2+'"'+"totalBurstAndIOTime"+'"'+":"+std::to_string(totalBurstTime);
     result<<"\n"+blanks1+"}";
-   
     commas = true;
 }
 

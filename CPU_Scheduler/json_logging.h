@@ -8,7 +8,7 @@ public:
     ~json_logging();
     void write(std::string,std::string);
     void ThreadsStart();
-    void writeThread(int);
+    void writeThread(int, int, int);
     void ThreadsEnd();
     void simulationStart();
     void writeSimulation(int* ,int, int, int, int, int);

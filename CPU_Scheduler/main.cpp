@@ -60,7 +60,7 @@ int main(int argc, char *argv[]){
     s->updateStrat(strat);
     
     // logging
-    std::string outputPath = "results/new_test10.json";
+    std::string outputPath = "results/new_test11.json";
     std::shared_ptr<json_logging> logging = std::make_shared<json_logging>(outputPath,"FIFO");
 
     // parameters
@@ -98,7 +98,6 @@ int main(int argc, char *argv[]){
             while(getline(linestream,element,',')) {
                 if (lineCount == 0) {
                     arrive = stod(element);
-                    logging->writeThread(arrive);
                 } else if (lineCount == 1) {
                     priority = stod(element);
                 } else if (lineCount >= 2) {
@@ -109,8 +108,12 @@ int main(int argc, char *argv[]){
                 }
                 lineCount++;
             }
-            
-            std::shared_ptr<Thread> newThread(new Thread(ThreadsCounter,arrive,burstTimes,priority));
+            int totalBurstTime = 0;
+            for( int i = 0; i < burstTime.size();i++) {
+                totalBurstTime = totalBurstTime + burstTime[i];
+            }
+            logging->writeThread(totalBurstTime, arrive, priority);
+            std::shared_ptr<Thread> newThread(new Thread(ThreadsCounter, arrive, burstTimes, priority));
             beforeReady->push_back(newThread);
             ThreadsCounter++;
         }

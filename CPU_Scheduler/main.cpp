@@ -16,6 +16,7 @@
 #include "json_logging.h"
 
 #define Strategy(x) strat = std::make_shared<x>(s->getContext())
+
 void Help(void){
     printf("Scheduler.\n\n");
     printf("Usage:\n");
@@ -30,6 +31,7 @@ void Help(void){
     printf("Options:\n");
     printf("\t-h\t\t Show this screen.\n");
 }
+
 int main(int argc, char *argv[]){
     
     std::shared_ptr<CPU> c = std::make_shared<CPU>();
@@ -156,11 +158,13 @@ int main(int argc, char *argv[]){
     }
     logging->simulationEnd();
     logging->end();
-//    int x;
-//
-//    std::cin >> x;
-
-    //system("pause");
+    // Calculating average waiting time
+    size_t waitTime = 0;
+    for (auto& it: *s->getContext()->FinishedList){
+        waitTime += it->waitingTime;
+    }
+    waitTime /= s->getContext()->FinishedList->size();
+    printf("\nAverage Waiting Time: %d.",(int)waitTime);
     if( argc >= 2){
         printf("\nStrategy: %s used.\n",argv[1]);
     }else {

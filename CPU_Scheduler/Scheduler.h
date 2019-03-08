@@ -2,7 +2,7 @@
 
 #include <list>
 #include <memory>
-
+#include <vector>
 #include "CPU.h"
 #include "IO.h"
 #include "ScheduleStrategy.h" //predefines Context
@@ -34,6 +34,11 @@ public:
     int* getTemp() {
         return temp;
     }
+    std::vector<int> getTempReadyList() {
+        std::vector<int> tempResult = *(tempReadyList);
+        tempReadyList = std::make_shared<std::vector<int>>();
+        return tempResult;
+    }
 private:
 	std::shared_ptr<CPU> cpu;
     std::shared_ptr<IO> io;
@@ -45,6 +50,8 @@ private:
 	std::shared_ptr<ScheduleStrategy> strat;
     
     int temp[4] = {-1, -1, -1 ,-1};
+    std::shared_ptr<std::vector<int>> tempReadyList = std::make_shared<std::vector<int>>();
+
 //    int tempMoveToCPU = -1;
 //    int tempMoveToBlock = -1;
 //    int tempMoveToFinished = -1;

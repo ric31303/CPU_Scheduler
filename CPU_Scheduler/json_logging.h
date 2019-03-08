@@ -1,4 +1,5 @@
 #include <fstream>
+#include <vector>
 #ifndef _json_logging_
 #define _json_logging_
 class json_logging
@@ -11,7 +12,7 @@ public:
     void writeThread(int, int, int);
     void ThreadsEnd();
     void simulationStart();
-    void writeSimulation(int* ,int, int, int, int, int);
+    void writeSimulation(std::vector<int>, int, int, int, int);
     void simulationEnd();
     void end();
     

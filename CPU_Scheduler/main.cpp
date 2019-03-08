@@ -60,12 +60,12 @@ int main(int argc, char *argv[]){
     s->updateStrat(strat);
     
     // logging
-    std::string outputPath = "results/new_test11.json";
+    std::string outputPath = "results/test20.json";
     std::shared_ptr<json_logging> logging = std::make_shared<json_logging>(outputPath,"FIFO");
 
     // parameters
     std::vector<size_t> burstTimes = {};
-    std::string path = "tests/test3.txt"; // default
+    std::string path = "tests/test20.txt"; // default
     int ThreadsCounter = 0;
     
     // get file path
@@ -102,6 +102,7 @@ int main(int argc, char *argv[]){
                     priority = stod(element);
                 } else if (lineCount >= 2) {
                     burst = stod(element);
+                    burstTime.push_back(burst);
                     burstTimes.push_back(burst);
                 } else {
                     break;
@@ -112,6 +113,7 @@ int main(int argc, char *argv[]){
             for( int i = 0; i < burstTime.size();i++) {
                 totalBurstTime = totalBurstTime + burstTime[i];
             }
+            
             logging->writeThread(totalBurstTime, arrive, priority);
             std::shared_ptr<Thread> newThread(new Thread(ThreadsCounter, arrive, burstTimes, priority));
             beforeReady->push_back(newThread);
@@ -127,33 +129,24 @@ int main(int argc, char *argv[]){
     printf("[main] Before run cpu, the number of threads:%d\n",ThreadsCounter);
     logging->simulationStart();
     while (!s->isFinished() or ThreadsCounter> 0) {
+
         
-        int initialPointer = 10;
-        int * moveReadyList = &(initialPointer);;
-        int readyCounter = 0;
         // check arriveTime
         if(beforeReady->front()!=NULL) {
             while( ThreadsCounter> 0 &&c->getClockTime() >= beforeReady->front()->lastReadyTime) {
                 s->addNewThread(beforeReady->front());
                 // write temp for logging
-                *(moveReadyList+readyCounter) = beforeReady->front()->id;
-                printf("    test pointer threads:%d\n",*(moveReadyList+readyCounter));
                 beforeReady->pop_front();
                 ThreadsCounter--;
-                readyCounter++;
             }
         }
         s->run();
         int * logging_temp = s->getTemp();
-        // log testing
-        int n = 3;
-        int* numberArray = new int[n];
-        for (int i = 0; i < n; i++) {
-            numberArray[i] = i;
-        }
-        logging->writeSimulation(moveReadyList,readyCounter,logging_temp[0],logging_temp[1],logging_temp[2],logging_temp[3]);
-        // log testing
         
+        // log testing
+        logging->writeSimulation(s->getTempReadyList(),logging_temp[0],logging_temp[1],logging_temp[2],logging_temp[3]);
+        // log testing
+
         std::cout <<"   number of finished threads:"<< s->numFinished() << "\n";
         std::this_thread::sleep_for(std::chrono::microseconds(100)); // sleep for 0.1ms
     }

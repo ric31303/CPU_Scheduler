@@ -63,7 +63,7 @@ void json_logging::simulationStart() {//run this every clock tick
     result<<blanks+'"'+"simulations"+'"'+":[\n";
 }
 
-void json_logging::writeSimulation(int *moveToReadyList, int moveToReadyListSize, int cycleTime, int moveToCPU, int moveToBlockList, int moveToFinishedList) {//run this every clock tick
+void json_logging::writeSimulation(std::vector<int> moveToReadyList, int cycleTime, int moveToCPU, int moveToBlockList, int moveToFinishedList) {//run this every clock tick
     if (commas) {
         result<<",\n";
     }
@@ -72,9 +72,9 @@ void json_logging::writeSimulation(int *moveToReadyList, int moveToReadyListSize
     result<<blanks1+"{\n";
     result<<blanks2+'"'+"cycleTime"+'"'+":"+std::to_string(cycleTime)+",\n";
     result<<blanks2+'"'+"moveToReadyList"+'"'+":"+"[";
-    for (int i =0;i<moveToReadyListSize;i++) {
+    for (int i =0;i<moveToReadyList.size();i++) {
         result<<std::to_string(moveToReadyList[i]);
-        if(i!=moveToReadyListSize-1) {
+        if(i != moveToReadyList.size()-1) {
             result<<",";
         }
     }

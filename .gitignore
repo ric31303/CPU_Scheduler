@@ -264,4 +264,7 @@ __pycache__/
 /results/*
 
 #tests
-/tests/*.txt
+# /tests/*.txt
+
+#build
+/build/*

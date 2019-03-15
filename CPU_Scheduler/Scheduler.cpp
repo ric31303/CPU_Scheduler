@@ -30,7 +30,7 @@ void Scheduler::run() {
     temp[2] = -1;
     temp[3] = -1;
     
-//    printf("\n[Scheduler]cpu time: %zu\n",cpu->getClockTime());
+    printf("\n[Scheduler]cpu time: %zu\n",cpu->getClockTime());
     std::shared_ptr<Thread> wakeThread = io->run();  //run io
     if (wakeThread != NULL){
         readyThread(wakeThread);
@@ -50,6 +50,7 @@ void Scheduler::updateStrat(std::shared_ptr<ScheduleStrategy> _strat) {
 }
 
 void Scheduler::addNewThread(std::shared_ptr<Thread> thread) {
+    printf("/n[Scheduler] add new thread Id:%d\n",thread->id);
     readyList->push_back(thread);
     strat->addThread(); //TODO: should the strategy be allowed to push the added thread?
     tempReadyList->push_back(thread->id);
@@ -57,7 +58,7 @@ void Scheduler::addNewThread(std::shared_ptr<Thread> thread) {
 }
 
 void Scheduler::readyThread(std::shared_ptr<Thread> thread) { //move a specific thread from Blocked List to Ready List
-//    printf("[Scheduler] wake thread Id:%d\n",thread->id);
+    printf("[Scheduler] wake thread Id:%d\n",thread->id);
     blockedList->remove(thread);//TODO: try this first
 	readyList->push_back(thread);
     tempReadyList->push_back(thread->id);
@@ -65,7 +66,7 @@ void Scheduler::readyThread(std::shared_ptr<Thread> thread) { //move a specific 
 
 void Scheduler::blockThread(std::shared_ptr<Thread> thread) { //move a specific thread from CPU to Blocked List
     // set logging temp
-//    printf("[Scheduler] block thread Id:%d\n",thread->id);
+    printf("[Scheduler] block thread Id:%d\n",thread->id);
     temp[2] = thread->id;
 	blockedList->push_back(thread);
 }
@@ -87,7 +88,9 @@ std::shared_ptr<Thread> Scheduler::preempt(std::shared_ptr<Thread> thread) { //p
     } else if (lastThread->needsIO){
         blockThread(lastThread);
     } else {
+        printf("[Scheduler] go to ready %d", lastThread->id);
         readyList->push_back(lastThread); // if not finished then push in to readyList
+        tempReadyList->push_back(lastThread->id);
     }
     return lastThread;
 }

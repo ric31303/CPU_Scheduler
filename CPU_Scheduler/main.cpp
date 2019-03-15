@@ -41,10 +41,10 @@ int main(int argc, char *argv[]){
     // parameters
     std::vector<size_t> burstTimes = {};
     std::string strategyType;
-    std::string inputFolder = "tests/No_IO/threads_100/";
+    std::string inputFolder = "tests/";
     std::string outputFolder = "results/";
 
-    std::string fileName = "test_threads_100_v1";
+    std::string fileName = "t5";
     std::string inputFileType = ".txt";
     std::map<std::string, int> m;
     
@@ -158,25 +158,24 @@ int main(int argc, char *argv[]){
         if(beforeReady->front()!=NULL) {
             while( ThreadsCounter> 0 &&c->getClockTime() >= beforeReady->front()->lastReadyTime) {
                 s->addNewThread(beforeReady->front());
-//                printf("    test pointer threads:%d\n",*(moveReadyList+readyCounter));
                 beforeReady->pop_front();
                 ThreadsCounter--;
             }
         }
         s->run();
         int * logging_temp = s->getTemp();
-        
+
         // logging
         logging->writeSimulation(s->getTempReadyList(),logging_temp[0],logging_temp[1],logging_temp[2],logging_temp[3]);
 
-//        std::cout <<"   number of finished threads:"<< s->numFinished() << "\n";
+        std::cout <<"   number of finished threads:"<< s->numFinished() << "\n";
         std::this_thread::sleep_for(std::chrono::microseconds(100)); // sleep for 0.1ms
     }
     logging->simulationEnd();
    
     // Calculating average waiting time
-    size_t waitTime = 0;
-    size_t turnaroundTime = 0;
+    float waitTime = 0;
+    float turnaroundTime = 0;
     for (auto& it: *s->getContext()->FinishedList){
         waitTime += it->waitingTime;
         turnaroundTime += (it->finishTime - it->arriveTime);
@@ -185,8 +184,8 @@ int main(int argc, char *argv[]){
     turnaroundTime /= s->getContext()->FinishedList->size();
     logging->write("avgWatingTime", std::to_string(waitTime), false);
     logging->write("avgTATTime", std::to_string(turnaroundTime), true);
-    printf("\nAverage Waiting Time: %d.",(int)waitTime);
-    printf("\nAverage turnaround  Time: %d.",(int)turnaroundTime);
+    printf("\nAverage Waiting Time: %f.",waitTime);
+    printf("\nAverage turnaround  Time: %f.",turnaroundTime);
 //    if( argc >= 2){
 //        printf("\nStrategy: %s used.\n",argv[1]);
 //    }else {

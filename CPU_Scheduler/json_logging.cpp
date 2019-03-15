@@ -47,6 +47,7 @@ void json_logging::writeThread(int totalBurstTime, int arriveTime, int priority)
     if (commas) {
         result<<",\n";
     }
+    printf("%d,%d,%d\n", totalBurstTime, arriveTime, priority);
     std::string blanks1(size*2, ' ');
     std::string blanks2(size*3, ' ');
     result<<blanks1+"{\n";

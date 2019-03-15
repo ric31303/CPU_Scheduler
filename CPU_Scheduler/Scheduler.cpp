@@ -35,13 +35,14 @@ void Scheduler::run() {
     if (wakeThread != NULL){
         readyThread(wakeThread);
     }
-	if (!cpu->run()) { //run cpu; if thread has completed:
-        
+	if (!cpu->getStatus()) { //run cpu; if thread has completed:
 		strat->schedule();
+        cpu->run();
 		return;
 	}
 	//otherwise run the strategy to see if we preempt
 	strat->run();
+    cpu->run();
     
 }
 
@@ -59,6 +60,7 @@ void Scheduler::addNewThread(std::shared_ptr<Thread> thread) {
 
 void Scheduler::readyThread(std::shared_ptr<Thread> thread) { //move a specific thread from Blocked List to Ready List
     printf("[Scheduler] wake thread Id:%d\n",thread->id);
+    thread->lastReadyTime = cpu->getClockTime();
     blockedList->remove(thread);//TODO: try this first
 	readyList->push_back(thread);
     tempReadyList->push_back(thread->id);
@@ -89,6 +91,7 @@ std::shared_ptr<Thread> Scheduler::preempt(std::shared_ptr<Thread> thread) { //p
         blockThread(lastThread);
     } else {
         printf("[Scheduler] go to ready %d", lastThread->id);
+        lastThread->lastReadyTime = cpu->getClockTime();
         readyList->push_back(lastThread); // if not finished then push in to readyList
         tempReadyList->push_back(lastThread->id);
     }
@@ -96,7 +99,7 @@ std::shared_ptr<Thread> Scheduler::preempt(std::shared_ptr<Thread> thread) { //p
 }
 
 void Scheduler::finishThread(std::shared_ptr<Thread> thread) { //move a specific thread from Ready List to Finished List
-    thread->finishTime = cpu->getClockTime()-1;
+    thread->finishTime = cpu->getClockTime();
 
 //    printf("[Scheduler] finish thread Id:%d, finishTime:%d \n",thread->id, thread->finishTime);
     // set logging temp
@@ -105,7 +108,7 @@ void Scheduler::finishThread(std::shared_ptr<Thread> thread) { //move a specific
 }
 
 bool Scheduler::isFinished(){
-	return readyList->size() == 0 && blockedList->size() == 0 && !cpu->getStatus();
+	return readyList->size() == 0 && blockedList->size() == 0  && getCurrThread() == NULL;
 }
 
 size_t Scheduler::numFinished(){

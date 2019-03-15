@@ -109,7 +109,7 @@ int main(int argc, char *argv[]){
         std::string line;
         
         while(getline(fin,line,'\n')){
-            std::vector<int> burstTime;
+            std::vector<size_t> burstTime;
             std::stringstream linestream(line);
             std::string element;
             int lineCount = 0;
@@ -132,12 +132,12 @@ int main(int argc, char *argv[]){
                 }
                 lineCount++;
             }
-            int totalBurstTime = 0;
+            size_t totalBurstTime = 0;
             for( int i = 0; i < burstTime.size();i++) {
                 totalBurstTime = totalBurstTime + burstTime[i];
             }
             
-            logging->writeThread(totalBurstTime, arrive, priority);
+            logging->writeThread((int)totalBurstTime, arrive, priority);
             std::shared_ptr<Thread> newThread(new Thread(ThreadsCounter, arrive, burstTimes, priority));
             beforeReady->push_back(newThread);
             ThreadsCounter++;
@@ -156,7 +156,7 @@ int main(int argc, char *argv[]){
         
         // check arriveTime
         if(beforeReady->front()!=NULL) {
-            while( ThreadsCounter> 0 &&c->getClockTime() >= beforeReady->front()->lastReadyTime) {
+            while( ThreadsCounter> 0 &&c->getClockTime() >= beforeReady->front()->arriveTime) {
                 s->addNewThread(beforeReady->front());
                 beforeReady->pop_front();
                 ThreadsCounter--;
@@ -180,7 +180,10 @@ int main(int argc, char *argv[]){
         waitTime += it->waitingTime;
         turnaroundTime += (it->finishTime - it->arriveTime);
     }
+    printf("\nTotal wait time: %f / %d",waitTime,(int)s->getContext()->FinishedList->size());
+    
     waitTime /= s->getContext()->FinishedList->size();
+    
     turnaroundTime /= s->getContext()->FinishedList->size();
     logging->write("avgWatingTime", std::to_string(waitTime), false);
     logging->write("avgTATTime", std::to_string(turnaroundTime), true);

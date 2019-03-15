@@ -32,7 +32,7 @@ size_t CPU::getLengthOfCurrentBurst(){
 }
 
 std::shared_ptr<Thread> CPU::setWorkingThread(std::shared_ptr<Thread> newThread) {
-    printf("[cpu] setWorkingThread\n");
+//    printf("[cpu] setWorkingThread\n");
     
     std::shared_ptr<Thread> oldThread = currThread;
     if (oldThread != NULL) {

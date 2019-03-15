@@ -38,37 +38,58 @@ int main(int argc, char *argv[]){
     std::shared_ptr<IO> io = std::make_shared<IO>();
     std::shared_ptr<ScheduleStrategy> strat;
     std::shared_ptr<Scheduler> s = std::make_shared<Scheduler>(c, io, strat);
-    
+    // parameters
+    std::vector<size_t> burstTimes = {};
+    std::string strategyType;
+    std::string inputFolder = "tests/No_IO/threads_100/";
+    std::string outputFolder = "results/";
+
+    std::string fileName = "test_threads_100_v1";
+    std::string inputFileType = ".txt";
     std::map<std::string, int> m;
-    m["ff"] = 0; m["rr"] = 1; m["sjf"] = 2; m["srtf"] = 3; m["p"] = 4; m["pp"] = 5; m["l"] = 6;
+    
+    
+//    m["ff"] = 0; m["rr"] = 1; m["sjf"] = 2; m["srtf"] = 3; m["p"] = 4; m["pp"] = 5; m["l"] = 6;
+    // read argc
     if (argc >= 2){
         if (std::string(argv[1]) == "-h"){
             Help();
             return 0;
         }
-        switch (m[argv[1]]) {
-            case 0: Strategy(FIFO_Strategy);            break;
-            case 1: Strategy(RR_Strategy);              break;
-            case 2: Strategy(SJF_Strategy);             break;
-            case 3: Strategy(SRTF_Strategy);            break;
-            case 4: Strategy(Priority_Strategy);        break;
-            case 5: Strategy(PreemptPriority_Strategy); break;
-            case 6: Strategy(Lottery_Strategy);         break;
-            default: Strategy(FIFO_Strategy);           break;
+        switch (atoi(argv[1])) {
+            case 0: Strategy(FIFO_Strategy);            strategyType = "FIFO";              break;
+            case 1: Strategy(RR_Strategy);              strategyType = "RR";                break;
+            case 2: Strategy(SJF_Strategy);             strategyType = "SJF";               break;
+            case 3: Strategy(SRTF_Strategy);            strategyType = "SRTF";              break;
+            case 4: Strategy(Priority_Strategy);        strategyType = "Priority";          break;
+            case 5: Strategy(PreemptPriority_Strategy); strategyType = "PreemptPriority";   break;
+            case 6: Strategy(Lottery_Strategy);         strategyType = "Lottery";           break;
+            default: Strategy(FIFO_Strategy);           strategyType = "FIFO";              break;
         }
     }else {
-        strat = std::make_shared<FIFO_Strategy>(s->getContext());
+        strat = std::make_shared<RR_Strategy>(s->getContext());
+        strategyType = "RR";
     }
-    s->updateStrat(strat);
+    if (argc >= 3){
+        fileName = argv[2];
+    }
+    if (argc >= 4){
+        inputFolder = argv[3];
+    }
+    if (argc >= 5){
+        outputFolder = argv[4];
+    }
     
-    // logging
-    std::string outputPath = "results/new_test10.json";
-    std::shared_ptr<json_logging> logging = std::make_shared<json_logging>(outputPath,"FIFO");
+    s->updateStrat(strat);
 
-    // parameters
-    std::vector<size_t> burstTimes = {};
-    std::string path = "tests/test3.txt"; // default
+    std::string path = inputFolder+fileName+inputFileType; // default
+    std::string outputPath = outputFolder+strategyType+"_"+fileName+".json";
+
+    std::cout<<"input path:"<<path<<std::endl;
     int ThreadsCounter = 0;
+    // logging
+    std::cout<<"output path:"<<outputPath<<std::endl;
+    std::shared_ptr<json_logging> logging = std::make_shared<json_logging>(outputPath,strategyType);
     
     // get file path
     // std::cout<<"input file path:"<<std::endl; // testData/test1.dat
@@ -136,7 +157,7 @@ int main(int argc, char *argv[]){
                 s->addNewThread(beforeReady->front());
                 // write temp for logging
                 *(moveReadyList+readyCounter) = beforeReady->front()->id;
-                printf("    test pointer threads:%d\n",*(moveReadyList+readyCounter));
+//                printf("    test pointer threads:%d\n",*(moveReadyList+readyCounter));
                 beforeReady->pop_front();
                 ThreadsCounter--;
                 readyCounter++;
@@ -153,21 +174,28 @@ int main(int argc, char *argv[]){
         logging->writeSimulation(moveReadyList,readyCounter,logging_temp[0],logging_temp[1],logging_temp[2],logging_temp[3]);
         // log testing
         
-        std::cout <<"   number of finished threads:"<< s->numFinished() << "\n";
+//        std::cout <<"   number of finished threads:"<< s->numFinished() << "\n";
         std::this_thread::sleep_for(std::chrono::microseconds(100)); // sleep for 0.1ms
     }
     logging->simulationEnd();
-    logging->end();
+   
     // Calculating average waiting time
     size_t waitTime = 0;
+    size_t turnaroundTime = 0;
     for (auto& it: *s->getContext()->FinishedList){
         waitTime += it->waitingTime;
+        turnaroundTime += (it->finishTime - it->arriveTime);
     }
     waitTime /= s->getContext()->FinishedList->size();
+    turnaroundTime /= s->getContext()->FinishedList->size();
+    logging->write("avgWatingTime", std::to_string(waitTime), false);
+    logging->write("avgTATTime", std::to_string(turnaroundTime), true);
     printf("\nAverage Waiting Time: %d.",(int)waitTime);
-    if( argc >= 2){
-        printf("\nStrategy: %s used.\n",argv[1]);
-    }else {
-        printf("\nStrategy: FIFO used.\n");
-    }
+    printf("\nAverage turnaround  Time: %d.",(int)turnaroundTime);
+//    if( argc >= 2){
+//        printf("\nStrategy: %s used.\n",argv[1]);
+//    }else {
+//        printf("\nStrategy: FIFO used.\n");
+//    }
+    logging->end();
 }

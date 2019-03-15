@@ -8,6 +8,8 @@ public:
     size_t lastReadyTime;
     size_t prevBurstTime;
     size_t priority;
+    size_t finishTime;
+    size_t arriveTime;
     int id;
     bool needsIO; //TODO: impliment IO
     bool finish;
@@ -32,6 +34,8 @@ public:
         burstTime = burstT;
         needsIO = false;
         finish = false;
+        finishTime = 0;
+        arriveTime = entryTime;
     }
 
     ~Thread() {

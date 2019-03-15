@@ -30,7 +30,7 @@ void Scheduler::run() {
     temp[2] = -1;
     temp[3] = -1;
     
-    printf("\n[Scheduler]cpu time: %zu\n",cpu->getClockTime());
+//    printf("\n[Scheduler]cpu time: %zu\n",cpu->getClockTime());
     std::shared_ptr<Thread> wakeThread = io->run();  //run io
     if (wakeThread != NULL){
         readyThread(wakeThread);
@@ -90,7 +90,9 @@ std::shared_ptr<Thread> Scheduler::preempt(std::shared_ptr<Thread> thread) { //p
 }
 
 void Scheduler::finishThread(std::shared_ptr<Thread> thread) { //move a specific thread from Ready List to Finished List
-	printf("[Scheduler] finish thread Id:%d\n",thread->id);
+    thread->finishTime = cpu->getClockTime()-1;
+
+//    printf("[Scheduler] finish thread Id:%d, finishTime:%d \n",thread->id, thread->finishTime);
     // set logging temp
     temp[3] = thread->id;
 	finishedList->push_back(thread);

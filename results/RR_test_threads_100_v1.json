@@ -1,29 +1,29 @@
 {
-    "strategy":"FIFO",
+    "strategy":"RR",
     "threads":[
         {
             "arriveTime":0
         },
         {
-            "arriveTime":1
+            "arriveTime":3
         },
         {
-            "arriveTime":6
+            "arriveTime":3
         },
         {
-            "arriveTime":8
+            "arriveTime":4
         },
         {
-            "arriveTime":13
+            "arriveTime":5
+        },
+        {
+            "arriveTime":9
         },
         {
             "arriveTime":14
         },
         {
-            "arriveTime":14
-        },
-        {
-            "arriveTime":16
+            "arriveTime":18
         },
         {
             "arriveTime":19
@@ -32,181 +32,217 @@
             "arriveTime":22
         },
         {
-            "arriveTime":22
+            "arriveTime":25
         },
         {
             "arriveTime":26
         },
         {
-            "arriveTime":27
+            "arriveTime":30
         },
         {
-            "arriveTime":29
+            "arriveTime":30
         },
         {
-            "arriveTime":32
+            "arriveTime":33
         },
         {
-            "arriveTime":36
+            "arriveTime":34
         },
         {
-            "arriveTime":41
+            "arriveTime":35
+        },
+        {
+            "arriveTime":35
+        },
+        {
+            "arriveTime":39
         },
         {
             "arriveTime":42
         },
         {
-            "arriveTime":47
+            "arriveTime":43
+        },
+        {
+            "arriveTime":44
+        },
+        {
+            "arriveTime":45
+        },
+        {
+            "arriveTime":46
+        },
+        {
+            "arriveTime":48
         },
         {
             "arriveTime":50
         },
         {
-            "arriveTime":51
+            "arriveTime":53
         },
         {
             "arriveTime":55
         },
         {
-            "arriveTime":56
+            "arriveTime":58
         },
         {
-            "arriveTime":60
-        },
-        {
-            "arriveTime":60
-        },
-        {
-            "arriveTime":65
+            "arriveTime":62
         },
         {
             "arriveTime":67
         },
         {
-            "arriveTime":69
+            "arriveTime":70
         },
         {
-            "arriveTime":72
-        },
-        {
-            "arriveTime":72
+            "arriveTime":74
         },
         {
             "arriveTime":75
         },
         {
-            "arriveTime":79
+            "arriveTime":77
+        },
+        {
+            "arriveTime":78
+        },
+        {
+            "arriveTime":81
         },
         {
             "arriveTime":83
         },
         {
-            "arriveTime":83
+            "arriveTime":88
         },
         {
-            "arriveTime":86
+            "arriveTime":89
         },
         {
-            "arriveTime":90
+            "arriveTime":94
         },
         {
-            "arriveTime":90
+            "arriveTime":97
         },
         {
-            "arriveTime":95
+            "arriveTime":97
         },
         {
-            "arriveTime":98
+            "arriveTime":97
         },
         {
             "arriveTime":101
         },
         {
-            "arriveTime":106
+            "arriveTime":103
         },
         {
-            "arriveTime":106
+            "arriveTime":103
         },
         {
-            "arriveTime":109
+            "arriveTime":104
+        },
+        {
+            "arriveTime":108
         },
         {
             "arriveTime":113
         },
         {
-            "arriveTime":113
+            "arriveTime":114
         },
         {
-            "arriveTime":118
+            "arriveTime":119
         },
         {
-            "arriveTime":120
+            "arriveTime":121
         },
         {
-            "arriveTime":122
+            "arriveTime":123
         },
         {
-            "arriveTime":127
+            "arriveTime":128
         },
         {
-            "arriveTime":131
+            "arriveTime":128
         },
         {
-            "arriveTime":131
+            "arriveTime":133
         },
         {
-            "arriveTime":136
+            "arriveTime":134
         },
         {
-            "arriveTime":141
+            "arriveTime":138
         },
         {
-            "arriveTime":143
+            "arriveTime":142
         },
         {
-            "arriveTime":143
+            "arriveTime":142
         },
         {
-            "arriveTime":147
+            "arriveTime":142
         },
         {
-            "arriveTime":152
+            "arriveTime":142
+        },
+        {
+            "arriveTime":146
+        },
+        {
+            "arriveTime":148
+        },
+        {
+            "arriveTime":148
+        },
+        {
+            "arriveTime":149
+        },
+        {
+            "arriveTime":154
         },
         {
             "arriveTime":155
         },
         {
-            "arriveTime":158
-        },
-        {
             "arriveTime":159
         },
         {
-            "arriveTime":163
+            "arriveTime":160
         },
         {
             "arriveTime":163
         },
         {
-            "arriveTime":166
+            "arriveTime":168
         },
         {
-            "arriveTime":166
+            "arriveTime":168
         },
         {
-            "arriveTime":167
+            "arriveTime":171
         },
         {
-            "arriveTime":170
+            "arriveTime":174
         },
         {
-            "arriveTime":173
+            "arriveTime":175
         },
         {
-            "arriveTime":176
+            "arriveTime":175
         },
         {
-            "arriveTime":181
+            "arriveTime":178
+        },
+        {
+            "arriveTime":179
+        },
+        {
+            "arriveTime":184
         },
         {
             "arriveTime":184
@@ -215,37 +251,40 @@
             "arriveTime":189
         },
         {
-            "arriveTime":193
+            "arriveTime":191
         },
         {
-            "arriveTime":195
-        },
-        {
-            "arriveTime":196
-        },
-        {
-            "arriveTime":196
+            "arriveTime":194
         },
         {
             "arriveTime":197
         },
         {
-            "arriveTime":202
+            "arriveTime":198
         },
         {
-            "arriveTime":204
+            "arriveTime":200
         },
         {
-            "arriveTime":204
-        },
-        {
-            "arriveTime":204
+            "arriveTime":205
         },
         {
             "arriveTime":206
         },
         {
+            "arriveTime":206
+        },
+        {
+            "arriveTime":209
+        },
+        {
             "arriveTime":210
+        },
+        {
+            "arriveTime":210
+        },
+        {
+            "arriveTime":214
         },
         {
             "arriveTime":215
@@ -254,52 +293,13 @@
             "arriveTime":218
         },
         {
-            "arriveTime":218
-        },
-        {
-            "arriveTime":221
-        },
-        {
-            "arriveTime":221
-        },
-        {
-            "arriveTime":221
-        },
-        {
-            "arriveTime":221
-        },
-        {
             "arriveTime":222
         },
         {
-            "arriveTime":227
+            "arriveTime":223
         },
         {
-            "arriveTime":229
-        },
-        {
-            "arriveTime":231
-        },
-        {
-            "arriveTime":235
-        },
-        {
-            "arriveTime":237
-        },
-        {
-            "arriveTime":237
-        },
-        {
-            "arriveTime":238
-        },
-        {
-            "arriveTime":239
-        },
-        {
-            "arriveTime":241
-        },
-        {
-            "arriveTime":243
+            "arriveTime":225
         }],
     "simulations":[
         {
@@ -311,7 +311,7 @@
         },
         {
             "cycleTime":1,
-            "moveToReadyList":[1],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -325,28 +325,28 @@
         },
         {
             "cycleTime":3,
-            "moveToReadyList":[],
+            "moveToReadyList":[1,2],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":4,
-            "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToReadyList":[3],
+            "moveToCPU":1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":5,
-            "moveToReadyList":[],
+            "moveToReadyList":[4],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":6,
-            "moveToReadyList":[2],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -354,20 +354,20 @@
         {
             "cycleTime":7,
             "moveToReadyList":[],
-            "moveToCPU":1,
+            "moveToCPU":2,
             "moveToBlockList":-1,
-            "moveToFinishedList":0
+            "moveToFinishedList":1
         },
         {
             "cycleTime":8,
-            "moveToReadyList":[3],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":9,
-            "moveToReadyList":[],
+            "moveToReadyList":[5],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -382,9 +382,9 @@
         {
             "cycleTime":11,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":3,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":2
         },
         {
             "cycleTime":12,
@@ -395,14 +395,14 @@
         },
         {
             "cycleTime":13,
-            "moveToReadyList":[4],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":14,
-            "moveToReadyList":[5,6],
+            "moveToReadyList":[6],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -410,13 +410,13 @@
         {
             "cycleTime":15,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":0,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":3
         },
         {
             "cycleTime":16,
-            "moveToReadyList":[7],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -424,23 +424,23 @@
         {
             "cycleTime":17,
             "moveToReadyList":[],
-            "moveToCPU":2,
-            "moveToBlockList":-1,
-            "moveToFinishedList":1
-        },
-        {
-            "cycleTime":18,
-            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
+            "cycleTime":18,
+            "moveToReadyList":[7],
+            "moveToCPU":4,
+            "moveToBlockList":-1,
+            "moveToFinishedList":0
+        },
+        {
             "cycleTime":19,
             "moveToReadyList":[8],
-            "moveToCPU":3,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":2
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":20,
@@ -458,8 +458,8 @@
         },
         {
             "cycleTime":22,
-            "moveToReadyList":[9,10],
-            "moveToCPU":-1,
+            "moveToReadyList":[9],
+            "moveToCPU":5,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -479,7 +479,7 @@
         },
         {
             "cycleTime":25,
-            "moveToReadyList":[],
+            "moveToReadyList":[10],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -487,16 +487,16 @@
         {
             "cycleTime":26,
             "moveToReadyList":[11],
-            "moveToCPU":-1,
+            "moveToCPU":6,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":27,
-            "moveToReadyList":[12],
-            "moveToCPU":4,
+            "moveToReadyList":[],
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":3
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":28,
@@ -507,15 +507,15 @@
         },
         {
             "cycleTime":29,
-            "moveToReadyList":[13],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":30,
-            "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToReadyList":[12,13],
+            "moveToCPU":7,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -528,35 +528,35 @@
         },
         {
             "cycleTime":32,
-            "moveToReadyList":[14],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":33,
-            "moveToReadyList":[],
+            "moveToReadyList":[14],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":34,
-            "moveToReadyList":[],
-            "moveToCPU":5,
+            "moveToReadyList":[15],
+            "moveToCPU":8,
             "moveToBlockList":-1,
-            "moveToFinishedList":4
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":35,
-            "moveToReadyList":[],
-            "moveToCPU":6,
+            "moveToReadyList":[16,17],
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":5
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":36,
-            "moveToReadyList":[15],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -571,13 +571,13 @@
         {
             "cycleTime":38,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":9,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":39,
-            "moveToReadyList":[],
+            "moveToReadyList":[18],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -591,56 +591,56 @@
         },
         {
             "cycleTime":41,
-            "moveToReadyList":[16],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":42,
-            "moveToReadyList":[17],
-            "moveToCPU":7,
-            "moveToBlockList":-1,
-            "moveToFinishedList":6
-        },
-        {
-            "cycleTime":43,
-            "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToReadyList":[19],
+            "moveToCPU":4,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
+            "cycleTime":43,
+            "moveToReadyList":[20],
+            "moveToCPU":10,
+            "moveToBlockList":-1,
+            "moveToFinishedList":4
+        },
+        {
             "cycleTime":44,
-            "moveToReadyList":[],
+            "moveToReadyList":[21],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":45,
-            "moveToReadyList":[],
+            "moveToReadyList":[22],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":46,
-            "moveToReadyList":[],
-            "moveToCPU":8,
-            "moveToBlockList":-1,
-            "moveToFinishedList":7
-        },
-        {
-            "cycleTime":47,
-            "moveToReadyList":[18],
+            "moveToReadyList":[23],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
-            "cycleTime":48,
+            "cycleTime":47,
             "moveToReadyList":[],
+            "moveToCPU":11,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
+            "cycleTime":48,
+            "moveToReadyList":[24],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -654,17 +654,17 @@
         },
         {
             "cycleTime":50,
-            "moveToReadyList":[19],
+            "moveToReadyList":[25],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":51,
-            "moveToReadyList":[20],
-            "moveToCPU":-1,
+            "moveToReadyList":[],
+            "moveToCPU":5,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":11
         },
         {
             "cycleTime":52,
@@ -675,7 +675,7 @@
         },
         {
             "cycleTime":53,
-            "moveToReadyList":[],
+            "moveToReadyList":[26],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -683,20 +683,20 @@
         {
             "cycleTime":54,
             "moveToReadyList":[],
-            "moveToCPU":9,
-            "moveToBlockList":-1,
-            "moveToFinishedList":8
-        },
-        {
-            "cycleTime":55,
-            "moveToReadyList":[21],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
+            "cycleTime":55,
+            "moveToReadyList":[27],
+            "moveToCPU":12,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
             "cycleTime":56,
-            "moveToReadyList":[22],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -704,13 +704,13 @@
         {
             "cycleTime":57,
             "moveToReadyList":[],
-            "moveToCPU":10,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":9
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":58,
-            "moveToReadyList":[],
+            "moveToReadyList":[28],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -718,13 +718,13 @@
         {
             "cycleTime":59,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":13,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":60,
-            "moveToReadyList":[23,24],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -732,13 +732,13 @@
         {
             "cycleTime":61,
             "moveToReadyList":[],
-            "moveToCPU":11,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":10
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":62,
-            "moveToReadyList":[],
+            "moveToReadyList":[29],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -746,7 +746,7 @@
         {
             "cycleTime":63,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":6,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -759,7 +759,7 @@
         },
         {
             "cycleTime":65,
-            "moveToReadyList":[25],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -773,10 +773,10 @@
         },
         {
             "cycleTime":67,
-            "moveToReadyList":[26],
-            "moveToCPU":-1,
+            "moveToReadyList":[30],
+            "moveToCPU":14,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":6
         },
         {
             "cycleTime":68,
@@ -787,28 +787,28 @@
         },
         {
             "cycleTime":69,
-            "moveToReadyList":[27],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":70,
-            "moveToReadyList":[],
-            "moveToCPU":12,
-            "moveToBlockList":-1,
-            "moveToFinishedList":11
-        },
-        {
-            "cycleTime":71,
-            "moveToReadyList":[],
+            "moveToReadyList":[31],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
+            "cycleTime":71,
+            "moveToReadyList":[],
+            "moveToCPU":15,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
             "cycleTime":72,
-            "moveToReadyList":[28,29],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -822,15 +822,15 @@
         },
         {
             "cycleTime":74,
-            "moveToReadyList":[],
+            "moveToReadyList":[32],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":75,
-            "moveToReadyList":[30],
-            "moveToCPU":-1,
+            "moveToReadyList":[33],
+            "moveToCPU":7,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -843,24 +843,24 @@
         },
         {
             "cycleTime":77,
-            "moveToReadyList":[],
+            "moveToReadyList":[34],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":78,
-            "moveToReadyList":[],
+            "moveToReadyList":[35],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":79,
-            "moveToReadyList":[31],
-            "moveToCPU":13,
+            "moveToReadyList":[],
+            "moveToCPU":16,
             "moveToBlockList":-1,
-            "moveToFinishedList":12
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":80,
@@ -871,7 +871,7 @@
         },
         {
             "cycleTime":81,
-            "moveToReadyList":[],
+            "moveToReadyList":[36],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -885,17 +885,17 @@
         },
         {
             "cycleTime":83,
-            "moveToReadyList":[32,33],
-            "moveToCPU":-1,
+            "moveToReadyList":[37],
+            "moveToCPU":17,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":84,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":8,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":17
         },
         {
             "cycleTime":85,
@@ -906,7 +906,7 @@
         },
         {
             "cycleTime":86,
-            "moveToReadyList":[34],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -914,27 +914,27 @@
         {
             "cycleTime":87,
             "moveToReadyList":[],
-            "moveToCPU":14,
+            "moveToCPU":18,
             "moveToBlockList":-1,
-            "moveToFinishedList":13
+            "moveToFinishedList":8
         },
         {
             "cycleTime":88,
-            "moveToReadyList":[],
+            "moveToReadyList":[38],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":89,
-            "moveToReadyList":[],
+            "moveToReadyList":[39],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":90,
-            "moveToReadyList":[35,36],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -942,7 +942,7 @@
         {
             "cycleTime":91,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":19,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -956,23 +956,23 @@
         {
             "cycleTime":93,
             "moveToReadyList":[],
+            "moveToCPU":9,
+            "moveToBlockList":-1,
+            "moveToFinishedList":19
+        },
+        {
+            "cycleTime":94,
+            "moveToReadyList":[40],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
-            "cycleTime":94,
-            "moveToReadyList":[],
-            "moveToCPU":15,
-            "moveToBlockList":-1,
-            "moveToFinishedList":14
-        },
-        {
             "cycleTime":95,
-            "moveToReadyList":[37],
-            "moveToCPU":16,
+            "moveToReadyList":[],
+            "moveToCPU":20,
             "moveToBlockList":-1,
-            "moveToFinishedList":15
+            "moveToFinishedList":9
         },
         {
             "cycleTime":96,
@@ -983,14 +983,14 @@
         },
         {
             "cycleTime":97,
-            "moveToReadyList":[],
+            "moveToReadyList":[41,42,43],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":98,
-            "moveToReadyList":[38],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -998,7 +998,7 @@
         {
             "cycleTime":99,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":21,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -1011,7 +1011,7 @@
         },
         {
             "cycleTime":101,
-            "moveToReadyList":[39],
+            "moveToReadyList":[44],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1025,17 +1025,17 @@
         },
         {
             "cycleTime":103,
-            "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToReadyList":[45,46],
+            "moveToCPU":22,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":104,
-            "moveToReadyList":[],
-            "moveToCPU":17,
+            "moveToReadyList":[47],
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":16
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":105,
@@ -1046,28 +1046,28 @@
         },
         {
             "cycleTime":106,
-            "moveToReadyList":[40,41],
-            "moveToCPU":18,
-            "moveToBlockList":-1,
-            "moveToFinishedList":17
-        },
-        {
-            "cycleTime":107,
             "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
-            "cycleTime":108,
+            "cycleTime":107,
             "moveToReadyList":[],
+            "moveToCPU":23,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
+            "cycleTime":108,
+            "moveToReadyList":[48],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":109,
-            "moveToReadyList":[42],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1082,7 +1082,7 @@
         {
             "cycleTime":111,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":10,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -1095,14 +1095,14 @@
         },
         {
             "cycleTime":113,
-            "moveToReadyList":[43,44],
-            "moveToCPU":-1,
+            "moveToReadyList":[49],
+            "moveToCPU":24,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":10
         },
         {
             "cycleTime":114,
-            "moveToReadyList":[],
+            "moveToReadyList":[50],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1117,72 +1117,72 @@
         {
             "cycleTime":116,
             "moveToReadyList":[],
-            "moveToCPU":19,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":18
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":117,
             "moveToReadyList":[],
-            "moveToCPU":20,
+            "moveToCPU":25,
             "moveToBlockList":-1,
-            "moveToFinishedList":19
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":118,
-            "moveToReadyList":[45],
-            "moveToCPU":21,
-            "moveToBlockList":-1,
-            "moveToFinishedList":20
-        },
-        {
-            "cycleTime":119,
             "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
+            "cycleTime":119,
+            "moveToReadyList":[51],
+            "moveToCPU":26,
+            "moveToBlockList":-1,
+            "moveToFinishedList":25
+        },
+        {
             "cycleTime":120,
-            "moveToReadyList":[46],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":121,
-            "moveToReadyList":[],
+            "moveToReadyList":[52],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":122,
-            "moveToReadyList":[47],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":123,
-            "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToReadyList":[53],
+            "moveToCPU":27,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":124,
             "moveToReadyList":[],
-            "moveToCPU":22,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":21
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":125,
             "moveToReadyList":[],
-            "moveToCPU":23,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":22
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":126,
@@ -1193,17 +1193,17 @@
         },
         {
             "cycleTime":127,
-            "moveToReadyList":[48],
-            "moveToCPU":-1,
+            "moveToReadyList":[],
+            "moveToCPU":5,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":128,
-            "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToReadyList":[54,55],
+            "moveToCPU":28,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":5
         },
         {
             "cycleTime":129,
@@ -1215,13 +1215,13 @@
         {
             "cycleTime":130,
             "moveToReadyList":[],
-            "moveToCPU":24,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":23
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":131,
-            "moveToReadyList":[49,50],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1229,34 +1229,34 @@
         {
             "cycleTime":132,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":12,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":133,
-            "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToReadyList":[56],
+            "moveToCPU":29,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":12
         },
         {
             "cycleTime":134,
-            "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToReadyList":[57],
+            "moveToCPU":13,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":29
         },
         {
             "cycleTime":135,
             "moveToReadyList":[],
-            "moveToCPU":25,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":24
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":136,
-            "moveToReadyList":[51],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1264,16 +1264,16 @@
         {
             "cycleTime":137,
             "moveToReadyList":[],
-            "moveToCPU":26,
+            "moveToCPU":30,
             "moveToBlockList":-1,
-            "moveToFinishedList":25
+            "moveToFinishedList":13
         },
         {
             "cycleTime":138,
-            "moveToReadyList":[],
-            "moveToCPU":27,
+            "moveToReadyList":[58],
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":26
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":139,
@@ -1291,21 +1291,21 @@
         },
         {
             "cycleTime":141,
-            "moveToReadyList":[52],
-            "moveToCPU":-1,
+            "moveToReadyList":[],
+            "moveToCPU":31,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":142,
-            "moveToReadyList":[],
+            "moveToReadyList":[59,60,61,62],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":143,
-            "moveToReadyList":[53,54],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1320,34 +1320,34 @@
         {
             "cycleTime":145,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":14,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":31
         },
         {
             "cycleTime":146,
-            "moveToReadyList":[],
+            "moveToReadyList":[63],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":147,
-            "moveToReadyList":[55],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":148,
-            "moveToReadyList":[],
-            "moveToCPU":28,
+            "moveToReadyList":[64,65],
+            "moveToCPU":32,
             "moveToBlockList":-1,
-            "moveToFinishedList":27
+            "moveToFinishedList":14
         },
         {
             "cycleTime":149,
-            "moveToReadyList":[],
+            "moveToReadyList":[66],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1355,9 +1355,9 @@
         {
             "cycleTime":150,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":33,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":32
         },
         {
             "cycleTime":151,
@@ -1368,7 +1368,7 @@
         },
         {
             "cycleTime":152,
-            "moveToReadyList":[56],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1376,20 +1376,20 @@
         {
             "cycleTime":153,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":15,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":33
         },
         {
             "cycleTime":154,
-            "moveToReadyList":[],
+            "moveToReadyList":[67],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":155,
-            "moveToReadyList":[57],
+            "moveToReadyList":[68],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1404,27 +1404,27 @@
         {
             "cycleTime":157,
             "moveToReadyList":[],
-            "moveToCPU":29,
+            "moveToCPU":34,
             "moveToBlockList":-1,
-            "moveToFinishedList":28
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":158,
-            "moveToReadyList":[58],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":159,
-            "moveToReadyList":[59],
-            "moveToCPU":-1,
+            "moveToReadyList":[69],
+            "moveToCPU":35,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":34
         },
         {
             "cycleTime":160,
-            "moveToReadyList":[],
+            "moveToReadyList":[70],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1439,14 +1439,14 @@
         {
             "cycleTime":162,
             "moveToReadyList":[],
-            "moveToCPU":30,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":29
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":163,
-            "moveToReadyList":[60,61],
-            "moveToCPU":-1,
+            "moveToReadyList":[71],
+            "moveToCPU":7,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -1460,27 +1460,27 @@
         {
             "cycleTime":165,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":36,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":7
         },
         {
             "cycleTime":166,
-            "moveToReadyList":[62,63],
-            "moveToCPU":31,
+            "moveToReadyList":[],
+            "moveToCPU":37,
             "moveToBlockList":-1,
-            "moveToFinishedList":30
+            "moveToFinishedList":36
         },
         {
             "cycleTime":167,
-            "moveToReadyList":[64],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":168,
-            "moveToReadyList":[],
+            "moveToReadyList":[72,73],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1494,14 +1494,14 @@
         },
         {
             "cycleTime":170,
-            "moveToReadyList":[65],
-            "moveToCPU":-1,
+            "moveToReadyList":[],
+            "moveToCPU":16,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":171,
-            "moveToReadyList":[],
+            "moveToReadyList":[74],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1509,34 +1509,34 @@
         {
             "cycleTime":172,
             "moveToReadyList":[],
+            "moveToCPU":38,
+            "moveToBlockList":-1,
+            "moveToFinishedList":16
+        },
+        {
+            "cycleTime":173,
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
-            "cycleTime":173,
-            "moveToReadyList":[66],
-            "moveToCPU":32,
-            "moveToBlockList":-1,
-            "moveToFinishedList":31
-        },
-        {
             "cycleTime":174,
-            "moveToReadyList":[],
+            "moveToReadyList":[75],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":175,
-            "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToReadyList":[76,77],
+            "moveToCPU":39,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":38
         },
         {
             "cycleTime":176,
-            "moveToReadyList":[67],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1544,21 +1544,21 @@
         {
             "cycleTime":177,
             "moveToReadyList":[],
-            "moveToCPU":33,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":32
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":178,
-            "moveToReadyList":[],
+            "moveToReadyList":[78],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":179,
-            "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToReadyList":[79],
+            "moveToCPU":18,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -1571,7 +1571,7 @@
         },
         {
             "cycleTime":181,
-            "moveToReadyList":[68],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1579,20 +1579,20 @@
         {
             "cycleTime":182,
             "moveToReadyList":[],
-            "moveToCPU":34,
-            "moveToBlockList":-1,
-            "moveToFinishedList":33
-        },
-        {
-            "cycleTime":183,
-            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
+            "cycleTime":183,
+            "moveToReadyList":[],
+            "moveToCPU":40,
+            "moveToBlockList":-1,
+            "moveToFinishedList":18
+        },
+        {
             "cycleTime":184,
-            "moveToReadyList":[69],
+            "moveToReadyList":[80,81],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1600,9 +1600,9 @@
         {
             "cycleTime":185,
             "moveToReadyList":[],
-            "moveToCPU":35,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":34
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":186,
@@ -1614,7 +1614,7 @@
         {
             "cycleTime":187,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":41,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -1627,7 +1627,7 @@
         },
         {
             "cycleTime":189,
-            "moveToReadyList":[70],
+            "moveToReadyList":[82],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1641,8 +1641,8 @@
         },
         {
             "cycleTime":191,
-            "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToReadyList":[83],
+            "moveToCPU":42,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -1655,56 +1655,56 @@
         },
         {
             "cycleTime":193,
-            "moveToReadyList":[71],
-            "moveToCPU":36,
-            "moveToBlockList":-1,
-            "moveToFinishedList":35
-        },
-        {
-            "cycleTime":194,
             "moveToReadyList":[],
-            "moveToCPU":37,
-            "moveToBlockList":-1,
-            "moveToFinishedList":36
-        },
-        {
-            "cycleTime":195,
-            "moveToReadyList":[72],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
+            "cycleTime":194,
+            "moveToReadyList":[84],
+            "moveToCPU":-1,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
+            "cycleTime":195,
+            "moveToReadyList":[],
+            "moveToCPU":43,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
             "cycleTime":196,
-            "moveToReadyList":[73,74],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":197,
-            "moveToReadyList":[75],
+            "moveToReadyList":[85],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":198,
-            "moveToReadyList":[],
-            "moveToCPU":38,
-            "moveToBlockList":-1,
-            "moveToFinishedList":37
-        },
-        {
-            "cycleTime":199,
-            "moveToReadyList":[],
+            "moveToReadyList":[86],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
-            "cycleTime":200,
+            "cycleTime":199,
             "moveToReadyList":[],
+            "moveToCPU":20,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
+            "cycleTime":200,
+            "moveToReadyList":[87],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1718,7 +1718,7 @@
         },
         {
             "cycleTime":202,
-            "moveToReadyList":[76],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1726,27 +1726,27 @@
         {
             "cycleTime":203,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":44,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":204,
-            "moveToReadyList":[77,78,79],
-            "moveToCPU":-1,
-            "moveToBlockList":-1,
-            "moveToFinishedList":-1
-        },
-        {
-            "cycleTime":205,
             "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
+            "cycleTime":205,
+            "moveToReadyList":[88],
+            "moveToCPU":-1,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
             "cycleTime":206,
-            "moveToReadyList":[80],
+            "moveToReadyList":[89,90],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1754,9 +1754,9 @@
         {
             "cycleTime":207,
             "moveToReadyList":[],
-            "moveToCPU":39,
+            "moveToCPU":45,
             "moveToBlockList":-1,
-            "moveToFinishedList":38
+            "moveToFinishedList":44
         },
         {
             "cycleTime":208,
@@ -1767,14 +1767,14 @@
         },
         {
             "cycleTime":209,
-            "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToReadyList":[91],
+            "moveToCPU":46,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":45
         },
         {
             "cycleTime":210,
-            "moveToReadyList":[81],
+            "moveToReadyList":[92,93],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1796,20 +1796,20 @@
         {
             "cycleTime":213,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":21,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":214,
-            "moveToReadyList":[],
-            "moveToCPU":40,
+            "moveToReadyList":[94],
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":39
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":215,
-            "moveToReadyList":[82],
+            "moveToReadyList":[95],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1824,13 +1824,13 @@
         {
             "cycleTime":217,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":47,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":21
         },
         {
             "cycleTime":218,
-            "moveToReadyList":[83,84],
+            "moveToReadyList":[96],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1851,21 +1851,21 @@
         },
         {
             "cycleTime":221,
-            "moveToReadyList":[85,86,87,88],
-            "moveToCPU":41,
+            "moveToReadyList":[],
+            "moveToCPU":22,
             "moveToBlockList":-1,
-            "moveToFinishedList":40
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":222,
-            "moveToReadyList":[89],
-            "moveToCPU":42,
+            "moveToReadyList":[97],
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":41
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":223,
-            "moveToReadyList":[],
+            "moveToReadyList":[98],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1879,8 +1879,8 @@
         },
         {
             "cycleTime":225,
-            "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToReadyList":[99],
+            "moveToCPU":48,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -1893,7 +1893,7 @@
         },
         {
             "cycleTime":227,
-            "moveToReadyList":[90],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1901,13 +1901,13 @@
         {
             "cycleTime":228,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":23,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":48
         },
         {
             "cycleTime":229,
-            "moveToReadyList":[91],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1921,10 +1921,10 @@
         },
         {
             "cycleTime":231,
-            "moveToReadyList":[92],
-            "moveToCPU":43,
+            "moveToReadyList":[],
+            "moveToCPU":49,
             "moveToBlockList":-1,
-            "moveToFinishedList":42
+            "moveToFinishedList":23
         },
         {
             "cycleTime":232,
@@ -1949,8 +1949,8 @@
         },
         {
             "cycleTime":235,
-            "moveToReadyList":[93],
-            "moveToCPU":-1,
+            "moveToReadyList":[],
+            "moveToCPU":50,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -1963,35 +1963,35 @@
         },
         {
             "cycleTime":237,
-            "moveToReadyList":[94,95],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":238,
-            "moveToReadyList":[96],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":239,
-            "moveToReadyList":[97],
-            "moveToCPU":-1,
+            "moveToReadyList":[],
+            "moveToCPU":24,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":240,
             "moveToReadyList":[],
-            "moveToCPU":44,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":43
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":241,
-            "moveToReadyList":[98],
+            "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
@@ -1999,16 +1999,16 @@
         {
             "cycleTime":242,
             "moveToReadyList":[],
-            "moveToCPU":45,
-            "moveToBlockList":-1,
-            "moveToFinishedList":44
-        },
-        {
-            "cycleTime":243,
-            "moveToReadyList":[99],
             "moveToCPU":-1,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
+        },
+        {
+            "cycleTime":243,
+            "moveToReadyList":[],
+            "moveToCPU":51,
+            "moveToBlockList":-1,
+            "moveToFinishedList":24
         },
         {
             "cycleTime":244,
@@ -2020,9 +2020,9 @@
         {
             "cycleTime":245,
             "moveToReadyList":[],
-            "moveToCPU":46,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":45
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":246,
@@ -2034,9 +2034,9 @@
         {
             "cycleTime":247,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":52,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":51
         },
         {
             "cycleTime":248,
@@ -2062,9 +2062,9 @@
         {
             "cycleTime":251,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":53,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":52
         },
         {
             "cycleTime":252,
@@ -2090,16 +2090,16 @@
         {
             "cycleTime":255,
             "moveToReadyList":[],
-            "moveToCPU":47,
+            "moveToCPU":26,
             "moveToBlockList":-1,
-            "moveToFinishedList":46
+            "moveToFinishedList":53
         },
         {
             "cycleTime":256,
             "moveToReadyList":[],
-            "moveToCPU":48,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":47
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":257,
@@ -2111,16 +2111,16 @@
         {
             "cycleTime":258,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":27,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":26
         },
         {
             "cycleTime":259,
             "moveToReadyList":[],
-            "moveToCPU":49,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":48
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":260,
@@ -2139,16 +2139,16 @@
         {
             "cycleTime":262,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":54,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":263,
             "moveToReadyList":[],
-            "moveToCPU":50,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":49
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":264,
@@ -2167,7 +2167,7 @@
         {
             "cycleTime":266,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":55,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -2195,23 +2195,23 @@
         {
             "cycleTime":270,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":28,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":271,
             "moveToReadyList":[],
-            "moveToCPU":51,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":50
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":272,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":56,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":28
         },
         {
             "cycleTime":273,
@@ -2223,9 +2223,9 @@
         {
             "cycleTime":274,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":57,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":56
         },
         {
             "cycleTime":275,
@@ -2244,16 +2244,16 @@
         {
             "cycleTime":277,
             "moveToReadyList":[],
-            "moveToCPU":52,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":51
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":278,
             "moveToReadyList":[],
-            "moveToCPU":53,
+            "moveToCPU":58,
             "moveToBlockList":-1,
-            "moveToFinishedList":52
+            "moveToFinishedList":57
         },
         {
             "cycleTime":279,
@@ -2279,16 +2279,16 @@
         {
             "cycleTime":282,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":30,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":283,
             "moveToReadyList":[],
-            "moveToCPU":54,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":53
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":284,
@@ -2307,9 +2307,9 @@
         {
             "cycleTime":286,
             "moveToReadyList":[],
-            "moveToCPU":55,
+            "moveToCPU":59,
             "moveToBlockList":-1,
-            "moveToFinishedList":54
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":287,
@@ -2335,9 +2335,9 @@
         {
             "cycleTime":290,
             "moveToReadyList":[],
-            "moveToCPU":56,
+            "moveToCPU":60,
             "moveToBlockList":-1,
-            "moveToFinishedList":55
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":291,
@@ -2349,9 +2349,9 @@
         {
             "cycleTime":292,
             "moveToReadyList":[],
-            "moveToCPU":57,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":56
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":293,
@@ -2363,16 +2363,16 @@
         {
             "cycleTime":294,
             "moveToReadyList":[],
-            "moveToCPU":58,
+            "moveToCPU":61,
             "moveToBlockList":-1,
-            "moveToFinishedList":57
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":295,
             "moveToReadyList":[],
-            "moveToCPU":59,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":58
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":296,
@@ -2391,7 +2391,7 @@
         {
             "cycleTime":298,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":62,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -2412,14 +2412,14 @@
         {
             "cycleTime":301,
             "moveToReadyList":[],
-            "moveToCPU":60,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":59
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":302,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":63,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -2447,7 +2447,7 @@
         {
             "cycleTime":306,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":64,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -2468,14 +2468,14 @@
         {
             "cycleTime":309,
             "moveToReadyList":[],
-            "moveToCPU":61,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":60
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":310,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":65,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -2503,7 +2503,7 @@
         {
             "cycleTime":314,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":66,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -2531,16 +2531,16 @@
         {
             "cycleTime":318,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":67,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":319,
             "moveToReadyList":[],
-            "moveToCPU":62,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":61
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":320,
@@ -2559,7 +2559,7 @@
         {
             "cycleTime":322,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":68,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -2580,9 +2580,9 @@
         {
             "cycleTime":325,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":15,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":68
         },
         {
             "cycleTime":326,
@@ -2594,9 +2594,9 @@
         {
             "cycleTime":327,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":69,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":15
         },
         {
             "cycleTime":328,
@@ -2608,9 +2608,9 @@
         {
             "cycleTime":329,
             "moveToReadyList":[],
-            "moveToCPU":63,
+            "moveToCPU":70,
             "moveToBlockList":-1,
-            "moveToFinishedList":62
+            "moveToFinishedList":69
         },
         {
             "cycleTime":330,
@@ -2636,7 +2636,7 @@
         {
             "cycleTime":333,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":71,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -2664,16 +2664,16 @@
         {
             "cycleTime":337,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":35,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":338,
             "moveToReadyList":[],
-            "moveToCPU":64,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":63
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":339,
@@ -2692,7 +2692,7 @@
         {
             "cycleTime":341,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":72,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -2720,7 +2720,7 @@
         {
             "cycleTime":345,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":73,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -2741,14 +2741,14 @@
         {
             "cycleTime":348,
             "moveToReadyList":[],
-            "moveToCPU":65,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":64
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":349,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":37,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -2769,16 +2769,16 @@
         {
             "cycleTime":352,
             "moveToReadyList":[],
-            "moveToCPU":66,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":65
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":353,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":74,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":37
         },
         {
             "cycleTime":354,
@@ -2804,16 +2804,16 @@
         {
             "cycleTime":357,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":75,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":74
         },
         {
             "cycleTime":358,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":76,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":75
         },
         {
             "cycleTime":359,
@@ -2832,14 +2832,14 @@
         {
             "cycleTime":361,
             "moveToReadyList":[],
-            "moveToCPU":67,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":66
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":362,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":77,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -2867,16 +2867,16 @@
         {
             "cycleTime":366,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":78,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":367,
             "moveToReadyList":[],
-            "moveToCPU":68,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":67
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":368,
@@ -2888,9 +2888,9 @@
         {
             "cycleTime":369,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":79,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":78
         },
         {
             "cycleTime":370,
@@ -2916,9 +2916,9 @@
         {
             "cycleTime":373,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":39,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":79
         },
         {
             "cycleTime":374,
@@ -2930,16 +2930,16 @@
         {
             "cycleTime":375,
             "moveToReadyList":[],
-            "moveToCPU":69,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":68
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":376,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":80,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":39
         },
         {
             "cycleTime":377,
@@ -2965,7 +2965,7 @@
         {
             "cycleTime":380,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":81,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -2979,9 +2979,9 @@
         {
             "cycleTime":382,
             "moveToReadyList":[],
-            "moveToCPU":70,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":69
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":383,
@@ -2993,7 +2993,7 @@
         {
             "cycleTime":384,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":40,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -3007,16 +3007,16 @@
         {
             "cycleTime":386,
             "moveToReadyList":[],
-            "moveToCPU":71,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":70
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":387,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":82,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":40
         },
         {
             "cycleTime":388,
@@ -3035,23 +3035,23 @@
         {
             "cycleTime":390,
             "moveToReadyList":[],
-            "moveToCPU":72,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":71
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":391,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":83,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":392,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":41,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":83
         },
         {
             "cycleTime":393,
@@ -3077,9 +3077,9 @@
         {
             "cycleTime":396,
             "moveToReadyList":[],
-            "moveToCPU":73,
+            "moveToCPU":84,
             "moveToBlockList":-1,
-            "moveToFinishedList":72
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":397,
@@ -3098,14 +3098,14 @@
         {
             "cycleTime":399,
             "moveToReadyList":[],
-            "moveToCPU":74,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":73
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":400,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":42,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -3119,9 +3119,9 @@
         {
             "cycleTime":402,
             "moveToReadyList":[],
-            "moveToCPU":75,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":74
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":403,
@@ -3133,16 +3133,16 @@
         {
             "cycleTime":404,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":85,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":42
         },
         {
             "cycleTime":405,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":86,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":85
         },
         {
             "cycleTime":406,
@@ -3154,9 +3154,9 @@
         {
             "cycleTime":407,
             "moveToReadyList":[],
-            "moveToCPU":76,
+            "moveToCPU":43,
             "moveToBlockList":-1,
-            "moveToFinishedList":75
+            "moveToFinishedList":86
         },
         {
             "cycleTime":408,
@@ -3168,9 +3168,9 @@
         {
             "cycleTime":409,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":87,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":43
         },
         {
             "cycleTime":410,
@@ -3182,9 +3182,9 @@
         {
             "cycleTime":411,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":20,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":87
         },
         {
             "cycleTime":412,
@@ -3196,16 +3196,16 @@
         {
             "cycleTime":413,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":88,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":20
         },
         {
             "cycleTime":414,
             "moveToReadyList":[],
-            "moveToCPU":77,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":76
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":415,
@@ -3224,7 +3224,7 @@
         {
             "cycleTime":417,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":89,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -3252,7 +3252,7 @@
         {
             "cycleTime":421,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":90,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -3266,9 +3266,9 @@
         {
             "cycleTime":423,
             "moveToReadyList":[],
-            "moveToCPU":78,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":77
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":424,
@@ -3280,23 +3280,23 @@
         {
             "cycleTime":425,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":91,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":426,
             "moveToReadyList":[],
-            "moveToCPU":79,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":78
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":427,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":92,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":91
         },
         {
             "cycleTime":428,
@@ -3315,16 +3315,16 @@
         {
             "cycleTime":430,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":93,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":92
         },
         {
             "cycleTime":431,
             "moveToReadyList":[],
-            "moveToCPU":80,
+            "moveToCPU":46,
             "moveToBlockList":-1,
-            "moveToFinishedList":79
+            "moveToFinishedList":93
         },
         {
             "cycleTime":432,
@@ -3343,14 +3343,14 @@
         {
             "cycleTime":434,
             "moveToReadyList":[],
-            "moveToCPU":81,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":80
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":435,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":94,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -3378,7 +3378,7 @@
         {
             "cycleTime":439,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":95,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -3392,9 +3392,9 @@
         {
             "cycleTime":441,
             "moveToReadyList":[],
-            "moveToCPU":82,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":81
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":442,
@@ -3406,7 +3406,7 @@
         {
             "cycleTime":443,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":96,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -3427,9 +3427,9 @@
         {
             "cycleTime":446,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":47,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":96
         },
         {
             "cycleTime":447,
@@ -3448,16 +3448,16 @@
         {
             "cycleTime":449,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":97,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":47
         },
         {
             "cycleTime":450,
             "moveToReadyList":[],
-            "moveToCPU":83,
+            "moveToCPU":98,
             "moveToBlockList":-1,
-            "moveToFinishedList":82
+            "moveToFinishedList":97
         },
         {
             "cycleTime":451,
@@ -3476,9 +3476,9 @@
         {
             "cycleTime":453,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":99,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":98
         },
         {
             "cycleTime":454,
@@ -3504,7 +3504,7 @@
         {
             "cycleTime":457,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":22,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -3518,16 +3518,16 @@
         {
             "cycleTime":459,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":49,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":22
         },
         {
             "cycleTime":460,
             "moveToReadyList":[],
-            "moveToCPU":84,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":83
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":461,
@@ -3546,7 +3546,7 @@
         {
             "cycleTime":463,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":50,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -3560,9 +3560,9 @@
         {
             "cycleTime":465,
             "moveToReadyList":[],
-            "moveToCPU":85,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":84
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":466,
@@ -3574,7 +3574,7 @@
         {
             "cycleTime":467,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":27,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -3588,9 +3588,9 @@
         {
             "cycleTime":469,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":54,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":27
         },
         {
             "cycleTime":470,
@@ -3609,16 +3609,16 @@
         {
             "cycleTime":472,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":55,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":54
         },
         {
             "cycleTime":473,
             "moveToReadyList":[],
-            "moveToCPU":86,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":85
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":474,
@@ -3637,16 +3637,16 @@
         {
             "cycleTime":476,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":58,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":477,
             "moveToReadyList":[],
-            "moveToCPU":87,
+            "moveToCPU":30,
             "moveToBlockList":-1,
-            "moveToFinishedList":86
+            "moveToFinishedList":58
         },
         {
             "cycleTime":478,
@@ -3658,9 +3658,9 @@
         {
             "cycleTime":479,
             "moveToReadyList":[],
-            "moveToCPU":88,
+            "moveToCPU":59,
             "moveToBlockList":-1,
-            "moveToFinishedList":87
+            "moveToFinishedList":30
         },
         {
             "cycleTime":480,
@@ -3672,16 +3672,16 @@
         {
             "cycleTime":481,
             "moveToReadyList":[],
-            "moveToCPU":89,
+            "moveToCPU":60,
             "moveToBlockList":-1,
-            "moveToFinishedList":88
+            "moveToFinishedList":59
         },
         {
             "cycleTime":482,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":61,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":60
         },
         {
             "cycleTime":483,
@@ -3693,9 +3693,9 @@
         {
             "cycleTime":484,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":62,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":61
         },
         {
             "cycleTime":485,
@@ -3707,16 +3707,16 @@
         {
             "cycleTime":486,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":63,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":62
         },
         {
             "cycleTime":487,
             "moveToReadyList":[],
-            "moveToCPU":90,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":89
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":488,
@@ -3735,7 +3735,7 @@
         {
             "cycleTime":490,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":64,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -3763,16 +3763,16 @@
         {
             "cycleTime":494,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":65,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":495,
             "moveToReadyList":[],
-            "moveToCPU":91,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":90
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":496,
@@ -3791,16 +3791,16 @@
         {
             "cycleTime":498,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":66,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":499,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":67,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":66
         },
         {
             "cycleTime":500,
@@ -3826,23 +3826,23 @@
         {
             "cycleTime":503,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":70,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":504,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":71,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":70
         },
         {
             "cycleTime":505,
             "moveToReadyList":[],
-            "moveToCPU":92,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":91
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":506,
@@ -3854,16 +3854,16 @@
         {
             "cycleTime":507,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":35,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":71
         },
         {
             "cycleTime":508,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":72,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":35
         },
         {
             "cycleTime":509,
@@ -3875,9 +3875,9 @@
         {
             "cycleTime":510,
             "moveToReadyList":[],
-            "moveToCPU":93,
+            "moveToCPU":73,
             "moveToBlockList":-1,
-            "moveToFinishedList":92
+            "moveToFinishedList":72
         },
         {
             "cycleTime":511,
@@ -3896,16 +3896,16 @@
         {
             "cycleTime":513,
             "moveToReadyList":[],
-            "moveToCPU":94,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":93
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":514,
             "moveToReadyList":[],
-            "moveToCPU":95,
+            "moveToCPU":76,
             "moveToBlockList":-1,
-            "moveToFinishedList":94
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":515,
@@ -3931,9 +3931,9 @@
         {
             "cycleTime":518,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":77,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":76
         },
         {
             "cycleTime":519,
@@ -3945,16 +3945,16 @@
         {
             "cycleTime":520,
             "moveToReadyList":[],
-            "moveToCPU":96,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":95
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":521,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":80,
             "moveToBlockList":-1,
-            "moveToFinishedList":-1
+            "moveToFinishedList":77
         },
         {
             "cycleTime":522,
@@ -3980,7 +3980,7 @@
         {
             "cycleTime":525,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":81,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -3994,9 +3994,9 @@
         {
             "cycleTime":527,
             "moveToReadyList":[],
-            "moveToCPU":97,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":96
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":528,
@@ -4008,7 +4008,7 @@
         {
             "cycleTime":529,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":82,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -4036,16 +4036,16 @@
         {
             "cycleTime":533,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":41,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
         {
             "cycleTime":534,
             "moveToReadyList":[],
-            "moveToCPU":98,
+            "moveToCPU":84,
             "moveToBlockList":-1,
-            "moveToFinishedList":97
+            "moveToFinishedList":41
         },
         {
             "cycleTime":535,
@@ -4071,7 +4071,7 @@
         {
             "cycleTime":538,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":88,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -4085,9 +4085,9 @@
         {
             "cycleTime":540,
             "moveToReadyList":[],
-            "moveToCPU":99,
+            "moveToCPU":-1,
             "moveToBlockList":-1,
-            "moveToFinishedList":98
+            "moveToFinishedList":-1
         },
         {
             "cycleTime":541,
@@ -4099,7 +4099,7 @@
         {
             "cycleTime":542,
             "moveToReadyList":[],
-            "moveToCPU":-1,
+            "moveToCPU":89,
             "moveToBlockList":-1,
             "moveToFinishedList":-1
         },
@@ -4122,6 +4122,239 @@
             "moveToReadyList":[],
             "moveToCPU":-1,
             "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
+            "cycleTime":546,
+            "moveToReadyList":[],
+            "moveToCPU":90,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
+            "cycleTime":547,
+            "moveToReadyList":[],
+            "moveToCPU":46,
+            "moveToBlockList":-1,
+            "moveToFinishedList":90
+        },
+        {
+            "cycleTime":548,
+            "moveToReadyList":[],
+            "moveToCPU":94,
+            "moveToBlockList":-1,
+            "moveToFinishedList":46
+        },
+        {
+            "cycleTime":549,
+            "moveToReadyList":[],
+            "moveToCPU":-1,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
+            "cycleTime":550,
+            "moveToReadyList":[],
+            "moveToCPU":95,
+            "moveToBlockList":-1,
+            "moveToFinishedList":94
+        },
+        {
+            "cycleTime":551,
+            "moveToReadyList":[],
+            "moveToCPU":-1,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
+            "cycleTime":552,
+            "moveToReadyList":[],
+            "moveToCPU":-1,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
+            "cycleTime":553,
+            "moveToReadyList":[],
+            "moveToCPU":-1,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
+            "cycleTime":554,
+            "moveToReadyList":[],
+            "moveToCPU":99,
+            "moveToBlockList":-1,
+            "moveToFinishedList":95
+        },
+        {
+            "cycleTime":555,
+            "moveToReadyList":[],
+            "moveToCPU":-1,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
+            "cycleTime":556,
+            "moveToReadyList":[],
+            "moveToCPU":-1,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
+            "cycleTime":557,
+            "moveToReadyList":[],
+            "moveToCPU":49,
+            "moveToBlockList":-1,
             "moveToFinishedList":99
-        }]
+        },
+        {
+            "cycleTime":558,
+            "moveToReadyList":[],
+            "moveToCPU":50,
+            "moveToBlockList":-1,
+            "moveToFinishedList":49
+        },
+        {
+            "cycleTime":559,
+            "moveToReadyList":[],
+            "moveToCPU":55,
+            "moveToBlockList":-1,
+            "moveToFinishedList":50
+        },
+        {
+            "cycleTime":560,
+            "moveToReadyList":[],
+            "moveToCPU":-1,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
+            "cycleTime":561,
+            "moveToReadyList":[],
+            "moveToCPU":63,
+            "moveToBlockList":-1,
+            "moveToFinishedList":55
+        },
+        {
+            "cycleTime":562,
+            "moveToReadyList":[],
+            "moveToCPU":-1,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
+            "cycleTime":563,
+            "moveToReadyList":[],
+            "moveToCPU":64,
+            "moveToBlockList":-1,
+            "moveToFinishedList":63
+        },
+        {
+            "cycleTime":564,
+            "moveToReadyList":[],
+            "moveToCPU":-1,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
+            "cycleTime":565,
+            "moveToReadyList":[],
+            "moveToCPU":65,
+            "moveToBlockList":-1,
+            "moveToFinishedList":64
+        },
+        {
+            "cycleTime":566,
+            "moveToReadyList":[],
+            "moveToCPU":67,
+            "moveToBlockList":-1,
+            "moveToFinishedList":65
+        },
+        {
+            "cycleTime":567,
+            "moveToReadyList":[],
+            "moveToCPU":-1,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
+            "cycleTime":568,
+            "moveToReadyList":[],
+            "moveToCPU":73,
+            "moveToBlockList":-1,
+            "moveToFinishedList":67
+        },
+        {
+            "cycleTime":569,
+            "moveToReadyList":[],
+            "moveToCPU":-1,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
+            "cycleTime":570,
+            "moveToReadyList":[],
+            "moveToCPU":80,
+            "moveToBlockList":-1,
+            "moveToFinishedList":73
+        },
+        {
+            "cycleTime":571,
+            "moveToReadyList":[],
+            "moveToCPU":81,
+            "moveToBlockList":-1,
+            "moveToFinishedList":80
+        },
+        {
+            "cycleTime":572,
+            "moveToReadyList":[],
+            "moveToCPU":82,
+            "moveToBlockList":-1,
+            "moveToFinishedList":81
+        },
+        {
+            "cycleTime":573,
+            "moveToReadyList":[],
+            "moveToCPU":-1,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
+            "cycleTime":574,
+            "moveToReadyList":[],
+            "moveToCPU":84,
+            "moveToBlockList":-1,
+            "moveToFinishedList":82
+        },
+        {
+            "cycleTime":575,
+            "moveToReadyList":[],
+            "moveToCPU":-1,
+            "moveToBlockList":-1,
+            "moveToFinishedList":-1
+        },
+        {
+            "cycleTime":576,
+            "moveToReadyList":[],
+            "moveToCPU":88,
+            "moveToBlockList":-1,
+            "moveToFinishedList":84
+        },
+        {
+            "cycleTime":577,
+            "moveToReadyList":[],
+            "moveToCPU":89,
+            "moveToBlockList":-1,
+            "moveToFinishedList":88
+        },
+        {
+            "cycleTime":578,
+            "moveToReadyList":[],
+            "moveToCPU":-1,
+            "moveToBlockList":-1,
+            "moveToFinishedList":89
+        }],
+    "avgWatingTime":"232",
+    "avgTATTime":"234"
 }

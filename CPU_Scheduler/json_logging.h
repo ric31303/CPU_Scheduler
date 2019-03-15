@@ -6,7 +6,7 @@ class json_logging
 public:
     json_logging(std::string,std::string);
     ~json_logging();
-    void write(std::string,std::string);
+    void write(std::string,std::string, bool);
     void ThreadsStart();
     void writeThread(int);
     void ThreadsEnd();

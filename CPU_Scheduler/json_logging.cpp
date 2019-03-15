@@ -13,7 +13,7 @@ json_logging::json_logging(std::string path, std::string start){
     printf("[json_logging] build:%s\n",path.c_str());
     result.open(fileName,std::ios::out);
     result<<"{\n";
-    write("strategy",start);
+    write("strategy",start, false);
 }
 
 
@@ -21,11 +21,15 @@ json_logging::~json_logging()
 {
 }
 
-void json_logging::write(std::string index,std::string data) {//run this every clock tick
+void json_logging::write(std::string index,std::string data, bool nodot) {//run this every clock tick
     
     std::string blanks(size, ' ');
     result<<blanks+'"'+index+'"'+":"+'"'+data+'"';
-    result<<",\n";
+    if (nodot) {
+        result<<"\n";
+    } else {
+        result<<",\n";
+    }
 }
 
 void json_logging::end() {//run this every clock tick
@@ -87,6 +91,6 @@ void json_logging::writeSimulation(std::vector<int> moveToReadyList, int cycleTi
 }
 
 void json_logging::simulationEnd() {//run this every clock tick
-    result<<"]\n";
+    result<<"],\n";
 }
 

@@ -49,7 +49,7 @@ int main(int argc, char *argv[]){
     std::map<std::string, int> m;
     
     
-//    m["ff"] = 0; m["rr"] = 1; m["sjf"] = 2; m["srtf"] = 3; m["p"] = 4; m["pp"] = 5; m["l"] = 6;
+    // m["ff"] = 0; m["rr"] = 1; m["sjf"] = 2; m["srtf"] = 3; m["p"] = 4; m["pp"] = 5; m["l"] = 6;
     // read argc
     if (argc >= 2){
         if (std::string(argv[1]) == "-h"){
@@ -67,8 +67,8 @@ int main(int argc, char *argv[]){
             default: Strategy(FIFO_Strategy);           strategyType = "FIFO";              break;
         }
     }else {
-        strat = std::make_shared<RR_Strategy>(s->getContext());
-        strategyType = "RR";
+        strat = std::make_shared<SJF_Strategy>(s->getContext());
+        strategyType = "SJF";
     }
     if (argc >= 3){
         fileName = argv[2];
@@ -174,10 +174,13 @@ int main(int argc, char *argv[]){
     logging->simulationEnd();
    
     // Calculating average waiting time
+    printf("result:\n\n");
     float waitTime = 0;
     float turnaroundTime = 0;
     for (auto& it: *s->getContext()->FinishedList){
         waitTime += it->waitingTime;
+        printf("id:%d\n",it->id);
+        printf("waiting time:%d\n", (int)it->waitingTime);
         turnaroundTime += (it->finishTime - it->arriveTime);
     }
     waitTime /= s->getContext()->FinishedList->size();

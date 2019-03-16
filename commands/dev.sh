@@ -5,7 +5,7 @@ echo "$_testPath"
 echo "$_strategyAmount"
 echo "$_testAmount"
 
-strategy=0
+strategy=6
 
 fileName="t5"
 Folder=""

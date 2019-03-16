@@ -27,8 +27,8 @@ do
   while [ "$testNum" -lt "$testAmount" ]
   do
     file="$fileName$testNum"
-    # ../build/CPU_Scheduling "$strategy" "$file" "$testPath" "$resultPath"
-    echo "$strategy" "$file"
+    ../build/CPU_Scheduling "$strategy" "$file" "$testPath" "$resultPath"
+    # echo "$strategy" "$file"
     testNum=$(($testNum+1))
   done
   strategy=$(($strategy+1))

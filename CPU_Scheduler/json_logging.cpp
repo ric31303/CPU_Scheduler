@@ -10,7 +10,7 @@ json_logging::json_logging(std::string path, std::string start){
 //        result.open(fileName,std::ios::in);
 //        i++;
 //    }
-    printf("[json_logging] build:%s\n",path.c_str());
+//    printf("[json_logging] build:%s\n",path.c_str());
     result.open(fileName,std::ios::out);
     result<<"{\n";
     write("strategy",start, false);

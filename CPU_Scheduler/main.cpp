@@ -67,8 +67,8 @@ int main(int argc, char *argv[]){
             default: Strategy(FIFO_Strategy);           strategyType = "FIFO";              break;
         }
     }else {
-        strat = std::make_shared<SJF_Strategy>(s->getContext());
-        strategyType = "SJF";
+        strat = std::make_shared<RR_Strategy>(s->getContext());
+        strategyType = "RR";
     }
     if (argc >= 3){
         fileName = argv[2];
@@ -149,7 +149,7 @@ int main(int argc, char *argv[]){
     
     
     //run scheduler
-    printf("[main] Before run cpu, the number of threads:%d\n",ThreadsCounter);
+//    printf("[main] Before run cpu, the number of threads:%d\n",ThreadsCounter);
     logging->simulationStart();
     while (!s->isFinished() or ThreadsCounter> 0) {
 
@@ -168,30 +168,29 @@ int main(int argc, char *argv[]){
         // logging
         logging->writeSimulation(s->getTempReadyList(),logging_temp[0],logging_temp[1],logging_temp[2],logging_temp[3]);
 
-        std::cout <<"   number of finished threads:"<< s->numFinished() << "\n";
-        std::this_thread::sleep_for(std::chrono::microseconds(100)); // sleep for 0.1ms
+//        std::cout <<"   number of finished threads:"<< s->numFinished() << "\n";
+//        std::this_thread::sleep_for(std::chrono::microseconds(100)); // sleep for 0.1ms
     }
     logging->simulationEnd();
    
     // Calculating average waiting time
-    printf("result:\n\n");
+//    printf("result:\n\n");
     float waitTime = 0;
     float turnaroundTime = 0;
     for (auto& it: *s->getContext()->FinishedList){
         waitTime += it->waitingTime;
-        printf("id:%d\n",it->id);
-        printf("waiting time:%d\n", (int)it->waitingTime);
+//        printf("id:%d\n",it->id);
+//        printf("waiting time:%d\n", (int)it->waitingTime);
         turnaroundTime += (it->finishTime - it->arriveTime);
     }
-    printf("\nTotal wait time: %f / %d",waitTime,(int)s->getContext()->FinishedList->size());
+//    printf("\nTotal wait time: %f / %d",waitTime,(int)s->getContext()->FinishedList->size());
     
     waitTime /= s->getContext()->FinishedList->size();
     
     turnaroundTime /= s->getContext()->FinishedList->size();
     logging->write("avgWatingTime", std::to_string(waitTime), false);
     logging->write("avgTATTime", std::to_string(turnaroundTime), true);
-    printf("\nAverage Waiting Time: %f.",waitTime);
-    printf("\nAverage turnaround  Time: %f.",turnaroundTime);
+    printf("\nAverage Waiting Time, Average turnaround  Time: \n%f \n%f\n",waitTime,turnaroundTime);
 //    if( argc >= 2){
 //        printf("\nStrategy: %s used.\n",argv[1]);
 //    }else {

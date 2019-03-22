@@ -5,9 +5,9 @@ echo "$_testPath"
 echo "$_strategyAmount"
 echo "$_testAmount"
 
-strategy=6
+strategy=0
 
-fileName="t5"
+fileName="test_case_sample"
 Folder=""
 testFileType=".txt";
 

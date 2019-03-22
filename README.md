@@ -4,6 +4,10 @@
 
 This program is to simulate how a single CPU schedule threads through 7(code:0~6) non-machine learning algorithms. The program was implemented by C++.
 
+The result will show mean waiting time and TAT in terminal.
+
+The output files in results folder not only record mean waiting time and TAT but also record every movement of CPU.
+
 ---
 
 ## Schedule Algorithms
@@ -59,3 +63,49 @@ step5: Check results
 ## How to run our case?
 
 Pick one and run "sh filename.sh" in terminal and check results after running
+
+## The format of test cases
+
+    Each line in test cases follows the rules below:
+
+    col 1   arrival time
+    col 2   priority
+    col 3   burst time
+    col 4   I/O time
+    col 5   burst time
+    .
+    .
+    .
+    col n   burst time
+
+## The format of output files
+
+    json file format:
+
+    {
+        "strategy":string,
+        "threads":[
+        {
+            "priority":number,
+            "arriveTime":number,
+            "totalBurstAndIOTime":number
+        },
+        .
+        .
+        .
+        ],
+        "simulations":[
+        {
+            "cycleTime":number,
+            "moveToReadyList":[number,number,number],
+            "moveToCPU":number,
+            "moveToBlockList":number,
+            "moveToFinishedList":number
+        },
+        .
+        .
+        .
+        ],
+        "avgWatingTime":number,
+        "avgTATTime":number
+    }

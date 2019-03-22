@@ -41,10 +41,10 @@ int main(int argc, char *argv[]){
     // parameters
     std::vector<size_t> burstTimes = {};
     std::string strategyType;
-    std::string inputFolder = "tests/";
+    std::string inputFolder = "tests/t50/";
     std::string outputFolder = "results/";
 
-    std::string fileName = "t5";
+    std::string fileName = "t50";
     std::string inputFileType = ".txt";
     std::map<std::string, int> m;
     

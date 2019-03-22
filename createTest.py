@@ -1,12 +1,12 @@
 import sys
 import random
 
-maxBurstTime = 10
+maxBurstTime = 100
 maxBurstAndIONum = 10
 minBurstAndIONum = 1
 threadNum = 100
-arriveTimeRange = 5
-priorityRange = 10
+arriveTimeRange = 20
+priorityRange = 20
 
 # random.seed(9001)
 
@@ -46,6 +46,6 @@ if __name__ == "__main__":
 			fo.write(",")
 			fo.write(str(burstTime))
 		fo.write("\n")
-		arriveTime += random.randint(0, arriveTimeRange)
+		# arriveTime += random.randint(0, arriveTimeRange)
 
 	fo.close()
